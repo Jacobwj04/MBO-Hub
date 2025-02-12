@@ -1,5 +1,6 @@
 import { usePage } from "@inertiajs/react";
 import './Navigation.css';
+import Navlink from '../Components/NavLink';
 
 function Navigation() {
     const { auth } = usePage().props;
@@ -14,6 +15,7 @@ function Navigation() {
                 />
             </div>
             <nav className="nav">
+                
                 <a href={route('projects.projects')} className="nav-link">Projects</a>
                 <a href={route('about.about')} className="nav-link">About</a>
                 <a href={route('partners.partners')} className="nav-link">Partners</a>
