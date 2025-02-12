@@ -15,12 +15,11 @@ function Navigation() {
                 />
             </div>
             <nav className="nav">
-                
-                <a href={route('projects.projects')} className="nav-link">Projects</a>
-                <a href={route('about.about')} className="nav-link">About</a>
-                <a href={route('partners.partners')} className="nav-link">Partners</a>
-                <a href={route('contact.contact')} className="nav-link">Contact</a>
-                <a href={route('login')} className="nav-link">Login</a>
+                <Navlink href={route('projects.projects')}>Projects</Navlink>
+                <Navlink href={route('about.about')}>About</Navlink>
+                <Navlink href={route('partners.partners')}>Partners</Navlink>
+                <Navlink href={route('contact.contact')}>Contact</Navlink>
+                <Navlink href={route('login')}>Login</Navlink>
 
                 <div className="user-info">
                     {auth.user ? (
