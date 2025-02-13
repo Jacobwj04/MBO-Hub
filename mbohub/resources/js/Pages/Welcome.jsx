@@ -23,92 +23,24 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
             </div>
             </section>
 
-            {/* Nieuws Section */}
-            <section className="section nieuws">
-                <div className="nieuws-container">
-                    <a href="/nieuws1" className="nieuws-block">
-                        <div className="nieuws-image">
-                            <img src="/img/750dinner.jpg" alt="Nieuws 1" />
-                        </div>
-                        <div className="nieuws-content">
-                            <h3>Nieuws</h3>
-                            <p><div className=""></div>Bekijk alle nieuws over het MBO-Hub</p>
-                        </div>
-                    </a>
-                    <a href="/nieuws2" className="nieuws-block">
-                        <div className="nieuws-image">
-                            <img src="/img/projects.jpg" alt="Project" />
-                        </div>
-                        <div className="nieuws-content">
-                            <h3>Project</h3>
-                            <p>Bekijk alle Projecten over het MBO-hub</p>
-                        </div>
-                    </a>
-                    <a href="/nieuws3" className="nieuws-block">
-                        <div className="nieuws-image">
-                            <img src="/img/750dinner.jpg" alt="Event" />
-                        </div>
-                        <div className="nieuws-content">
-                            <h3>Event</h3>
-                            <p>Bekijk alle evenementen die het MBO-hub host</p>
-                        </div>
-                    </a>
-                
-                </div>
-            </section>
-
             {/* Projects Section */}
-            <section className="section">
-                <div className="projects-container">
-                    <div className="project-card">
-                        <div className="video-container">
-                            <iframe
-                                src="https://www.youtube.com/watch?v=kwZH1llzlCM"
-                                title="Project Video 1"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+
+            <section className="projects">
+                <h1 className="projects-h1"> Projects</h1>
+                <ul className="project-container">
+                    <article className="project">
+                        <figure className="image-container">
+                            <img className="image" src="https://placehold.co/600x400" alt="image from projects" />
+                        </figure>
+                        <div className="project-content">
+                            <label htmlFor="" className="project-label">dit is een label</label>
+                            <h2 className="project-h2">project</h2>
+                            <p className="project-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos enim quia error! Quod a incidunt earum adipisci labore aspernatur blanditiis, quam rerum optio itaque voluptas totam molestiae! Soluta, laudantium doloremque!
+                            </p>
                         </div>
-                        <p className="project-description">This is a project about creating engaging user interfaces.</p>
-                    </div>
-                    <div className="project-card">
-                        <div className="video-container">
-                            <iframe
-                                src="https://www.youtube.com/watch?v=kwZH1llzlCM"
-                                title="Project Video 2"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        <p className="project-description">This project explores the power of API integrations.</p>
-                    </div>
-                    <div className="project-card">
-                        <div className="video-container">
-                            <iframe
-                                src="https://www.youtube.com/watch?v=kwZH1llzlCM"
-                                title="Project Video 3"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        <p className="project-description">Learn how to build responsive web applications.</p>
-                    </div>
-                    <div className="project-card">
-                        <div className="video-container">
-                            <iframe
-                                src="https://www.youtube.com/watch?v=kwZH1llzlCM"
-                                title="Project Video 4"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        <p className="project-description">Explore advanced JavaScript techniques and their applications.</p>
-                    </div>
-                </div>
+                    </article>
+                
+                </ul>
             </section>
 
             {/* Footer Section */}
