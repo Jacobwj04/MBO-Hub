@@ -39,11 +39,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
     border-radius: 2em;
     border: none;
 
     &__link{
+        background: black;
         border: none;
         padding: 1em 2em;
         color: white;
@@ -59,7 +59,7 @@
         }
 
         &:hover{
-            background: #6a0572;
+            background: #d63041;
         }
     }
 }
