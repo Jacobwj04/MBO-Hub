@@ -1,0 +1,14 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+main{
+    max-width: 144em;
+    margin-inline: auto;
+}

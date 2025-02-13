@@ -1,5 +1,4 @@
 import { usePage } from "@inertiajs/react";
-import './Navigation.css';
 import Navlink from '../Components/NavLink';
 
 function Navigation() {
@@ -7,13 +6,13 @@ function Navigation() {
 
     return (
         <header className="header">
-            <div className="logo-container">
+            <figure className="header__figure">
                 <img
                     src="/img/750slinger.png"
                     alt="Logo"
-                    className="header-logo"
+                    className="header__logo"
                 />
-            </div>
+            </figure>
             <nav className="nav">
                 <Navlink href={route('projects.projects')}>Projects</Navlink>
                 <Navlink href={route('about.about')}>About</Navlink>
@@ -21,7 +20,7 @@ function Navigation() {
                 <Navlink href={route('contact.contact')}>Contact</Navlink>
                 <Navlink href={route('login')}>Login</Navlink>
 
-                <div className="user-info">
+                {/* <div className="user-info">
                     {auth.user ? (
                         <div className="login-user">
                             <div>Welkom</div>
@@ -31,8 +30,15 @@ function Navigation() {
 
                         <span className="guest-name">Guest</span>
                     )}
-                </div>
+                </div> */}
             </nav>
+            <figure className="header__hubLogo">
+                <img
+                    src="/img/750slinger.png"
+                    alt="Logo"
+                    className="header__logo"
+                />
+            </figure>
         </header>
     );
 }
