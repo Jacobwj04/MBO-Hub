@@ -1,4 +1,5 @@
 import GuestLayout from "@/Layouts/GuestLayout";
+import Project from "./project-component";
 
 function Welcome() {
     return (
@@ -28,18 +29,8 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
             <section className="projects">
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
-                    <article className="project">
-                        <figure className="image-container">
-                            <img className="image" src="https://placehold.co/600x400" alt="image from projects" />
-                        </figure>
-                        <div className="project-content">
-                            <label htmlFor="" className="project-label">dit is een label</label>
-                            <h2 className="project-h2">project</h2>
-                            <p className="project-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos enim quia error! Quod a incidunt earum adipisci labore aspernatur blanditiis, quam rerum optio itaque voluptas totam molestiae! Soluta, laudantium doloremque!
-                            </p>
-                        </div>
-                    </article>
-                
+                    <Project/>
+                    <Project/>
                 </ul>
             </section>
 
