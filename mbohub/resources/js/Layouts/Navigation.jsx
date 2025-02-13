@@ -34,7 +34,7 @@ function Navigation() {
             </nav>
             <figure className="header__hubLogo">
                 <img
-                    src="/img/750slinger.png"
+                    src="/img/MBO-Hub-logo.webp"
                     alt="Logo"
                     className="header__logo"
                 />
