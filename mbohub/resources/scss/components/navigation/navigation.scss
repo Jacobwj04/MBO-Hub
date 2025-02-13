@@ -1,0 +1,22 @@
+.header{
+    width: 100%;
+    height: 15em;
+    background: red;
+    position: relative;
+
+    &__figure{
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 50em;
+        height: auto;
+    }
+
+    &__logo{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    
+}
