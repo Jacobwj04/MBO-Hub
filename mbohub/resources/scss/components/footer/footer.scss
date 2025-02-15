@@ -1,0 +1,100 @@
+$footer-padding: 2em;
+$footer-container-width: 33%;
+$footer-container-height: 50vh;
+$font-size: 1.5em;
+$footer-bg: rgb(94 50 137);
+$text: white;
+
+.footer {
+    width: 100%;
+    height: 50vh;
+    background: $footer-bg;
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0em 2em;
+
+        .footer-title {
+            color: white;
+            padding-bottom: .5em;
+        }
+
+        .footer-contact {
+            padding: $footer-padding;
+            width: $footer-container-width;
+            height: $footer-container-height;
+            background: red;
+            font-size: $font-size;
+
+            .footer-email {
+                color: white;
+                font-size: 1em;
+            }
+
+            .footer-text {
+                color: white;
+                font-size: 1em;
+                margin-top: .5em;
+            }
+        }
+
+        .footer-links {
+            padding: $footer-padding;
+            width: $footer-container-width;
+            height: $footer-container-height;
+            background: green;
+            font-size: $font-size;
+
+            .links-container {
+                display: flex;
+                flex-direction: column;
+                gap: .4em;
+
+                .link {
+                    list-style: none;
+                    color: $text;
+                }
+            }
+        }
+
+        .footer-socials {
+            padding: $footer-padding;
+            width: $footer-container-width;
+            height: $footer-container-height;
+            background: orange;
+            font-size: $font-size;
+
+            .socials-container {
+                display: flex;
+                align-items: center;
+                gap: .5em;
+
+                .social {
+                    list-style: none;
+
+                    .a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .line {
+        width: 90%;
+        border-top: 2px solid rgb(131 106 155 / 80%);
+        background: $footer-bg;
+        position: absolute;
+        left: 5%;
+    }
+
+    .footer-btm-title {
+        background: $footer-bg;
+        color: $text;
+        text-align: center;
+        padding: 1em;
+    }
+
+}
