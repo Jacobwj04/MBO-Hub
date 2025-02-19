@@ -75,59 +75,6 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
                 <figure className="line"></figure>
                 <h2 className="footer-btm-title">© 2025 MBO-Hub Amsterdam. Alle rechten voorbehouden.</h2>
             </footer>
-            {/* <footer className="site-footer">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-4">
-                            <h6>About Us</h6>
-                            <p>
-                                The MBO Hub is a platform that connects education, businesses, and the community.
-                                We aim to empower students and professionals through events, projects, and news updates.
-                            </p>
-                        </div>
-                        <div className="col-md-4">
-                            <h6>Quick Links</h6>
-                            <ul className="footer-links">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-md-4">
-                            <h6>Contact Us</h6>
-                            <p>Email: info@mbo-hub.amsterdam</p>
-                            <p>Phone: +31 20 123 4567</p>
-                            <p>Address: Amsterdam, Netherlands</p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div className="row">
-                        <div className="col-md-6">
-                            <p>&copy; 2025 MBO Hub. All rights reserved.</p>
-                        </div>
-                        <div className="col-md-6 text-right">
-                            <ul className="social-icons">
-                                <li>
-                                    <a className="youtube" href="https://www.youtube.com/@MBO-Hub">
-                                        <i className="fab fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="linkedin" href="https://www.linkedin.com/company/mbo-hub-amsterdam">
-                                        <i className="fab fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="instagram" href="https://www.instagram.com/mbohub.amsterdam">
-                                        <i className="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer> */}
         </GuestLayout>
     );
 }
