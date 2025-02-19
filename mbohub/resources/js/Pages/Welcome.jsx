@@ -29,8 +29,8 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
             <section className="projects">
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
-                    <Project labelText={"Dit is een label"}/>
-                    <Project labelText={"Dit is een label"}/>
+                    <Project date={"8 november 2023"} circle={true} readMore={"Lees meer"} />
+                    <Project topLabelText={"Dit is een label"} bottomLabelText={"Dit is een label"} />
                 </ul>
             </section>
 
