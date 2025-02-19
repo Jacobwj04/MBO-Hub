@@ -55,13 +55,19 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
                         <h2 className="footer-title">Volg ons</h2>
                         <ul className="socials-container">
                             <li className="social">
-                                <a className="a" href="https://www.linkedin.com/company/mbo-hub-amsterdam/?">Linkedin</a>
+                                <a className="a" href="https://www.linkedin.com/company/mbo-hub-amsterdam/?">
+                                    <i className="fab fa-linkedin">Linkedin</i>
+                                </a>
                             </li>
                             <li className="social">
-                                <a className="a" href="https://www.instagram.com/mbohub.amsterdam/">Instagram</a>
+                                <a className="a" href="https://www.instagram.com/mbohub.amsterdam/">
+                                    <i className="fab fa-instagram">Instagram</i>
+                                </a>
                             </li>
                             <li className="social">
-                                <a className="a" href="https://www.youtube.com/@MBO-Hub">Youtube</a>
+                                <a className="a" href="https://www.youtube.com/@MBO-Hub">
+                                    <i className="fab fa-youtube">Youtube</i>
+                                </a>
                             </li>
                         </ul>
                     </div>
