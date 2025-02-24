@@ -1,4 +1,5 @@
 import React from "react";
+import SliderComponent from "@/Components/Slider";
 
 export function Banner () {
     return(
@@ -6,9 +7,6 @@ export function Banner () {
         <div className="banner">
             <figure className="banner__color"></figure>
             <article className="banner__container">
-                <figure className="banner__figure">
-                    <img src="/img/banner-image.jpeg" alt="" className="banner__img" />
-                </figure>
                 <section className="banner__text">
                     <h1 className="banner__title">
                         Samen bouwen we aan de toekomst van Amsterdam!
@@ -25,6 +23,7 @@ export function Banner () {
                         </a>
                     </div>
                 </section>
+                <SliderComponent />
             </article>
         </div>
         </>

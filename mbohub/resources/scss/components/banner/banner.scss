@@ -16,7 +16,7 @@ $white: white;
         position: absolute;
         top: 0;
         left: 0;
-        background: #0b353c84;
+        background: #4E448F;
         width: 100vw;
         height: 100%;
     }
@@ -26,6 +26,9 @@ $white: white;
         margin-inline: auto;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__img{
@@ -35,13 +38,10 @@ $white: white;
     }
 
     &__text{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
         gap: 2em;
+        z-index: 4;
     }
 
     &__title{
