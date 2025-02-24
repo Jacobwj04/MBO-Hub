@@ -1,3 +1,7 @@
+@use "sass:color";
+$red: #d63041;
+$white: white;
+
 .banner{
     width: 100%;
     height: 75vh;
@@ -12,7 +16,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: #0b353c84;
+        background: #4E448F;
         width: 100vw;
         height: 100%;
     }
@@ -22,6 +26,9 @@
         margin-inline: auto;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__img{
@@ -31,13 +38,10 @@
     }
 
     &__text{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
         gap: 2em;
+        z-index: 4;
     }
 
     &__title{
@@ -74,8 +78,8 @@
             border: 0.1em solid #d63041;
 
             &:hover{
-                background: darken(#d63041, 10%);
-                border: 0.1em solid darken(#d63041, 10%);
+                background: color.adjust($red, $lightness: -10%);
+                border: 0.1em solid color.adjust($red, $lightness: -10%);
             }
         }
 
@@ -84,7 +88,7 @@
             color: #d63041;
 
             &:hover{
-                background: darken(white, 10%);
+                background: color.adjust($white, $lightness: -10%);
             }
         }
     }
