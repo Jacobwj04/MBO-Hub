@@ -3,13 +3,6 @@ import React from "react";
 export function Banner () {
     return(
         <>
-        <figure className="header__figure">
-            <img
-                src="/img/750slinger.png"
-                alt="Logo"
-                className="header__logo"
-            />
-        </figure>
         <div className="banner">
             <figure className="banner__color"></figure>
             <article className="banner__container">
