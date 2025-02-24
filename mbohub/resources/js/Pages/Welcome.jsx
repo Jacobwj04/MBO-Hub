@@ -1,17 +1,11 @@
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "./project-component";
+import { Banner } from "@/Layouts/banner";
 
 function Welcome() {
     return (
         <GuestLayout hideNavigation={false}>
-            {/* Heading Section */}
-            <section className="heading">
-                <img
-                    src="https://mbo-hub.amsterdam/images/mbo-hub-home.png"
-                    alt="mbo-hub banner"
-                    className="heading__banner"
-                />
-            </section>
+            <Banner />
 
             {/* Events Section */}
             <section className="section events">
