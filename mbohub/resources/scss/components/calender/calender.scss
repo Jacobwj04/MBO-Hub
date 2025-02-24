@@ -1,0 +1,92 @@
+.calender{
+    max-width: 144em;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h2{
+        font-size: 3em;
+    }
+
+    &__dates{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5em;
+        gap: 2em;
+    }
+
+    &__activity{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: max-content;
+        border-left: 0.1em solid black;
+    }
+
+    &__date{
+        position: absolute;
+        width: 8em;
+        aspect-ratio: 1/1;
+        border: 0.1em solid #e5e7eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        background: white;
+
+        span{
+            font-size: 1.5em;
+        }
+    }
+
+
+    &__activities{
+        width: 70%;
+        border: 0.1em solid #e5e7eb;
+        padding: 2em;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title{
+        display: inline-block;
+    }
+
+    &__label{
+        padding: 0.5em 2em;
+        border-radius: 2em;
+        background: #5e32891a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #5e3289;
+        font-size: 1.3em;
+    }
+
+    &__text{
+        color: #6b7280;
+        font-size: 1.5em;
+    }
+
+    &__subHeading{
+        margin-top: 1em;
+        color: #4b5563;
+        font-size: 1.8em;
+    }
+}
