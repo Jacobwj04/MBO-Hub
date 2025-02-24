@@ -9,7 +9,7 @@ export default function AuthenticatedLayout({children}){
 
         <>
             <Navigation/>
-            <main className="main">{children}</main>
+            <main className="auth">{children}</main>
         </>
     )
 }

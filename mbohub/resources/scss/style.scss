@@ -1,4 +1,5 @@
 @use "./abstracts/reset";
-@use "./components/navigation/navigation.scss";
+@use "./components/navigation/navigation";
+@use "./components/auth/auth";
 @use "./components/projects/projects.scss";
 @use "./components/banner/banner.scss";
