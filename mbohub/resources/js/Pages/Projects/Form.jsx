@@ -27,5 +27,4 @@ function Form() {
     );
 }
 
-import '../css/Form.css';
 export default Form;
