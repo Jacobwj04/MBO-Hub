@@ -8,9 +8,9 @@ function contactPage() {
         <>
             <Navigation />
             <article className="contact">
-                <h1 className="header">Contact</h1>
-                <p className="summary">Heb je een vraag of wil je een project aandragen? Neem contact met ons op!</p>
-                <div className="content-container">
+                <h1 className="contact-header">Contact</h1>
+                <p className="contact-summary">Heb je een vraag of wil je een project aandragen? Neem contact met ons op!</p>
+                <div className="contact-content-container">
                     <article className="left">
                         <h1 className="left-h1">Stuur ons een bericht</h1>
                         <p className="left-p">Vul het formulier in en we nemen zo snel mogelijk contact met je op.</p>

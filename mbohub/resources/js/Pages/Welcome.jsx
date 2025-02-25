@@ -1,11 +1,7 @@
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "./project-component";
-<<<<<<< HEAD
 import FooterComponent from "./Contact/footer";
-=======
-import Contact from "./Contact/Contact";
 import { Banner } from "@/Layouts/banner";
->>>>>>> bbee70b460ac18505479af5b78d5ffaa3eeb41f8
 
 function Welcome() {
     return (

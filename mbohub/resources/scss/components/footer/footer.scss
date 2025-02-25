@@ -1,6 +1,5 @@
 $footer-padding: 2em;
 $footer-container-width: 33%;
-$footer-container-height: 30vh;
 $font-size: 1.5em;
 $footer-bg: rgb(94 50 137);
 $text: white;
@@ -8,13 +7,11 @@ $hover-color: red;
 
 .footer {
     width: 100%;
-    height: 30vh;
     background: $footer-bg;
 
     .footer-container {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
         padding: 0em 2em;
 
         .footer-title {
@@ -25,7 +22,6 @@ $hover-color: red;
         .footer-contact {
             padding: $footer-padding;
             width: $footer-container-width;
-            height: $footer-container-height;
             font-size: $font-size;
 
             .footer-email {
@@ -43,7 +39,6 @@ $hover-color: red;
         .footer-links {
             padding: $footer-padding;
             width: $footer-container-width;
-            height: $footer-container-height;
             font-size: $font-size;
 
             .links-container {
@@ -66,7 +61,6 @@ $hover-color: red;
         .footer-socials {
             padding: $footer-padding;
             width: $footer-container-width;
-            height: $footer-container-height;
             font-size: $font-size;
 
             .socials-container {
@@ -106,4 +100,66 @@ $hover-color: red;
         padding: 1em;
     }
 
+}
+
+@media screen and (max-width: 700px) {
+    .footer .footer-container .footer-socials .socials-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        flex-direction: column;
+    }
+
+    .footer .footer-container .footer-socials {
+        padding: 2em;
+        width: 33%;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer .footer-container .footer-links {
+        padding: 2em;
+        width: 33%;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer .footer-container .footer-contact {
+        width: 50vw;
+    }
+
+    .footer .footer-container .footer-links {
+        width: 32vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer .footer-container .footer-socials {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer .footer-container {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer .footer-container .footer-contact {
+        width: 100%;
+    }
+
+    .footer .footer-container .footer-links {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer .footer-container .footer-socials {
+        width: 100%;
+    }
 }
