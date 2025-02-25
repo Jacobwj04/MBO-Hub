@@ -12,7 +12,6 @@ $color-red: rgba(224, 51, 68, 1);
     border-radius: $border-radius;
 
             .image-container{
-                width: 45em;
                 height: 17em;
                 border-top-left-radius: $border-radius;
                 border-top-right-radius: $border-radius;
@@ -69,6 +68,23 @@ $color-red: rgba(224, 51, 68, 1);
                 }
 
                 .project-date {
+                    font-size: 1.5em;
+                }
+
+                .project-h2-center {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: .5em;
+                    font-size: 2em;
+                    color: $color-purple;
+                }
+
+                .project-summary-center {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: .5em;
                     font-size: 1.5em;
                 }
 
