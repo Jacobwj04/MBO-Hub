@@ -2,7 +2,7 @@ import React from "react";
 
 function Project({ topLabelText, bottomLabelText, date, readMore, circle }) {
     return (
-        <article className="project">
+        <article className="project-component">
             <figure className="image-container">
             {topLabelText && <label className="project-top-label">{topLabelText}</label>}
                 {circle ? (
