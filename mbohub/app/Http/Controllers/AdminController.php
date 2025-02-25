@@ -14,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return 'something';
+        $projects = Project::all();
+        return Inertia::render('Projects/Projects', ['projects' => $projects]);
     }
 
     /**
@@ -42,7 +43,7 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        return 'solo';
+        return Inertia::render('Projects/Projects', ['projects' => $id]);
     }
 
     /**

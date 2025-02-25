@@ -51,7 +51,7 @@ require __DIR__ . '/auth.php';
 // Projecten **
 // Calendar ***
 // Over ons *
-// Skills
+// Skills *
 // Contact
 //
 // Profile

@@ -5,7 +5,6 @@ function Project() {
 
     const csrf = document.querySelector('meta[name=csrf-token]').getAttribute("content");
     const project = usePage().props.project;
-    console.log(project)
     return (
         <AuthenticatedLayout>
             <section className="project">
@@ -39,14 +38,7 @@ function Project() {
                             <p>{project.locatie}</p>
                         </section>
                     </section>
-
-
                 </section>
-
-
-
-
-
             </section>
         </AuthenticatedLayout>
     );
