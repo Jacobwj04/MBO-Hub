@@ -1,6 +1,6 @@
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "./project-component";
-import Contact from "./Contact/Contact";
+import FooterComponent from "./Contact/footer";
 
 function Welcome() {
     return (
@@ -36,7 +36,7 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
             </section>
 
             {/* Footer Section */}
-            <Contact />
+            <FooterComponent />
 
         </GuestLayout>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Contact() {
+function FooterComponent() {
     return (
     <footer className="footer">
                 <div className="footer-container">
@@ -45,4 +45,4 @@ function Contact() {
     )
 }
 
-export default Contact;
+export default FooterComponent;
