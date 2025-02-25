@@ -40,8 +40,8 @@ Route::get('/skills', [SkillsController::class, 'skills'])->name('skills.skills'
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.contact');
 
-Route::get('/project', [ProjectsController::class, 'projects'])->name('projects.projects');
-Route::get('/project/{project}', [ProjectsController::class, 'project'])->name('projects.project');
+Route::get('/projects', [ProjectsController::class, 'projects'])->name('projects.projects');
+//Route::get('/project/{project}', [ProjectsController::class, 'project'])->name('projects.project');
 
 
 require __DIR__ . '/auth.php';
@@ -49,12 +49,12 @@ require __DIR__ . '/auth.php';
 
 // Home *
 // Projecten **
-// Calendar ***
+// Evenementen ***
 // Over ons *
 // Skills *
-// Contact
+// Contact *
 //
-// Profile
+// Profile *
 
 
 // * done
