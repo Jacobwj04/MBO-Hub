@@ -1,6 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 
-function Partners() {
+function Skills() {
 
     return (
         <AuthenticatedLayout>
@@ -9,4 +9,4 @@ function Partners() {
     );
 }
 
-export default Partners;
+export default Skills;

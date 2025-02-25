@@ -4,9 +4,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NieuwsController;
-use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\SkillsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -20,9 +20,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return Inertia::render('Dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () { // Als je ingelogd bent kan je het zien
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () { // Als je ingelogd bent kan je he
 
 Route::get('/about', [AboutController::class, 'about'])->name('about.about');
 
-Route::get('/partner', [PartnersController::class, 'partner'])->name('partners.partners');
+Route::get('/skills', [SkillsController::class, 'skills'])->name('skills.skills');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.contact');
 
@@ -45,3 +45,18 @@ Route::get('/project/{project}', [ProjectsController::class, 'project'])->name('
 
 
 require __DIR__ . '/auth.php';
+
+
+// Home *
+// Projecten **
+// Calendar ***
+// Over ons *
+// Skills
+// Contact
+//
+// Profile
+
+
+// * done
+// ** needs doing
+// *** being done

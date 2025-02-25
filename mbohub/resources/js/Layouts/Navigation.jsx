@@ -18,7 +18,7 @@ function Navigation({ showBigImage }) {
             <nav className="nav">
                 <Navlink href={route('projects.projects')}>Projects</Navlink>
                 <Navlink href={route('about.about')}>About</Navlink>
-                <Navlink href={route('partners.partners')}>Partners</Navlink>
+                <Navlink href={route('skills.skills')}>Skills</Navlink>
                 <Navlink href={route('contact.contact')}>Contact</Navlink>
                 <Navlink href={route('login')}>Login</Navlink>
 
