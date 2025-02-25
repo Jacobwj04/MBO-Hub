@@ -41,7 +41,7 @@ function FooterComponent() {
                 </div>
                 <figure className="line"></figure>
                 <h2 className="footer-btm-title">© 2025 MBO-Hub Amsterdam. Alle rechten voorbehouden.</h2>
-        </footer>
+    </footer>
     )
 }
 
