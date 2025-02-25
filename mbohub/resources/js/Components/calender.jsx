@@ -4,7 +4,7 @@ export default function Calender(){
     return(
         <>
             <article className="calender">
-            <h2>Kalender</h2>
+            <h2>Evenementenkalender</h2>
                 <ul className="calender__dates">
                     <li className="calender__activity">
                         <figure className="calender__date">
