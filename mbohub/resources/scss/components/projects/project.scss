@@ -1,0 +1,24 @@
+.projects {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2em 0em;
+
+    .projects-h1 {
+        font-size: 3em;
+    }
+
+    .project-container {
+        width: 100vw;
+        padding: 2em 0rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        flex-wrap: wrap;
+    }
+    
+
+}
