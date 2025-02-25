@@ -1,16 +1,58 @@
 $pcolor: rgb(94 50 137);
+$title: 3em;
 
 .about-us-h1 {
     padding: 1em;
     color: $pcolor;
-    font-size: 3em;
+    font-size: $title;
     text-align: center;
 }
 
 .about-us-section {
     width: 100vw;
-    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1em;
 }
+
+.about-us-devs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .about-us-h2-devs {
+        color: $pcolor;
+        font-size: $title;
+        margin: 2em;
+        text-align: center;
+    }
+
+    .about-us-developer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        flex-wrap: wrap;
+    }
+}
+
+.about-us-partners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2em 0em;
+
+    .about-us-h2-partner {
+        color: $pcolor;
+        font-size: 3em;
+        text-align: center;
+        margin: 1em;
+    }
+}
+
+
+
