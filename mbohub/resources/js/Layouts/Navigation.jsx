@@ -1,18 +1,20 @@
 import { usePage } from "@inertiajs/react";
 import Navlink from '../Components/NavLink';
 
-function Navigation() {
+function Navigation({ showBigImage }) {
     const { auth } = usePage().props;
 
     return (
         <header className="header">
-            <figure className="header__figure">
-                <img
-                    src="/img/750slinger.png"
-                    alt="Logo"
-                    className="header__logo"
-                />
-            </figure>
+            { showBigImage &&  (
+                <figure className="header__figure">
+                    <img
+                        src="/img/750slinger.png"
+                        alt="Logo"
+                        className="header__logo"
+                    />
+                </figure>
+            )}
             <nav className="nav">
                 <Navlink href={route('projects.projects')}>Projects</Navlink>
                 <Navlink href={route('about.about')}>About</Navlink>
