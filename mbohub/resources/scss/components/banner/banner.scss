@@ -1,0 +1,95 @@
+@use "sass:color";
+$red: #d63041;
+$white: white;
+
+.banner{
+    width: 100%;
+    height: 75vh;
+    position: relative;
+
+    &__figure{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__color{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #4E448F;
+        width: 100vw;
+        height: 100%;
+    }
+
+    &__container{
+        max-width: 144em;
+        margin-inline: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        z-index: 4;
+    }
+
+    &__title{
+        font-size: 4em;
+        color: white;
+        text-align: center;
+    }
+
+    &__subTitle{
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+    }
+
+    &__buttonWrapper{
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
+
+    &__button{
+        margin-top: 2em;
+        padding: 1em 3em;
+        border: none;
+        font-size: 1.5em;
+        border-radius: 2em;
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:first-child{
+            background: #d63041;
+            color: white;
+            border: 0.1em solid #d63041;
+
+            &:hover{
+                background: color.adjust($red, $lightness: -10%);
+                border: 0.1em solid color.adjust($red, $lightness: -10%);
+            }
+        }
+
+        &:last-child{
+            background: white;
+            color: #d63041;
+
+            &:hover{
+                background: color.adjust($white, $lightness: -10%);
+            }
+        }
+    }
+}

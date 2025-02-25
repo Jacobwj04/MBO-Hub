@@ -1,18 +1,12 @@
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "./project-component";
 import Contact from "./Contact/Contact";
+import { Banner } from "@/Layouts/banner";
 
 function Welcome() {
     return (
         <GuestLayout hideNavigation={false}>
-            {/* Heading Section */}
-            <section className="heading">
-                <img
-                    src="https://mbo-hub.amsterdam/images/mbo-hub-home.png"
-                    alt="mbo-hub banner"
-                    className="heading__banner"
-                />
-            </section>
+            <Banner />
 
             {/* Events Section */}
             <section className="section events">
@@ -30,8 +24,13 @@ Wat doen we? We verbinden bedrijven en organisaties met mbo-studenten, die meewe
             <section className="projects">
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
+
                     <Project labelText={"Dit is een label"}/>
                     <Project labelText={"Dit is een test"}/>
+
+                    <Project date={"8 november 2023"} circle={true} readMore={"Lees meer"} />
+                    <Project topLabelText={"Dit is een label"} bottomLabelText={"Dit is een label"} />
+
                 </ul>
             </section>
 

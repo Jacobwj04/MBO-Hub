@@ -1,10 +1,12 @@
 .header{
     width: 100%;
-    height: 15em;
+    height: 10em;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+    z-index: 2;
 
     &__figure{
         position: absolute;
@@ -12,6 +14,7 @@
         top: 0;
         width: 50em;
         height: auto;
+        z-index: 2;
     }
 
     &__logo{
@@ -36,16 +39,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: black;
     border-radius: 2em;
     border: none;
 
     &__link{
+        background: black;
         border: none;
         padding: 1em 2em;
         color: white;
         font-size: 1.5em;
         text-decoration: none;
+        transition: 0.2s all;
 
         &:first-child{
             border-radius: 2em 0 0 2em; 
@@ -56,7 +60,7 @@
         }
 
         &:hover{
-            background: #6a0572;
+            background: #d63041;
         }
     }
 }
