@@ -1,6 +1,7 @@
 @use "./abstracts/reset";
 @use "./components/navigation/navigation.scss";
-@use "./components/projects/projects.scss";
+@use "./components/projects/project-component.scss";
+@use "./components/projects/project.scss";
 @use "./components/footer/footer.scss";
 @use "./components/banner/banner.scss";
 @use "./components/slider/slider.scss";

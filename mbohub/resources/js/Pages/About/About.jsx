@@ -1,6 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { usePage } from "@inertiajs/react";
-import Project from "../project-component.jsx";
+import Project from "../../Components/project-component.jsx";
 
 
 
@@ -9,6 +9,7 @@ function About() {
         <AuthenticatedLayout>
             <h1 className="about-us-h1">Ontmoet ons Team</h1>
             <section className="about-us-section">
+                <Project circle={true} />
             </section>
         </AuthenticatedLayout>
     );

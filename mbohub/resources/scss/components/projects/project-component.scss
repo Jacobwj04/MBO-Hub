@@ -2,33 +2,14 @@ $color-purple: rgb(94 50 137);
 $border-radius: 1em;
 $color-red: rgba(224, 51, 68, 1);
 
-.projects {
-    width: 100vw;
+.project-component {
+    width: 29.7vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding: 2em 0em;
-
-    .projects-h1 {
-        font-size: 3em;
-    }
-
-    .project-container {
-        width: 100vw;
-        padding: 2em 0rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2em;
-        flex-wrap: wrap;
-
-        .project {
-            list-style: none;
-            width: 45em;
-            height: 34em;
-            border-radius: 1em;
-            box-shadow: 0em .5em .5em 0em rgba(0,0,0, .2);
+    border: 1px solid rgba(0,0,0, .1);
+    border-radius: $border-radius;
 
             .image-container{
                 width: 45em;
@@ -73,8 +54,8 @@ $color-red: rgba(224, 51, 68, 1);
 
             .project-content {
                 padding: 2em;
-                width: 100%;
-                height: 37vh;
+                width: 30.3vw;
+                height: 17em;
                 border-bottom-left-radius: $border-radius;
                 border-bottom-right-radius: $border-radius;
 
@@ -108,7 +89,8 @@ $color-red: rgba(224, 51, 68, 1);
                     font-size: 1.5em;
                     color: $color-red;
                 }
+            } &:hover {
+                box-shadow: 0em .5em 2em rgba(0, 0, 0, .1);
+                cursor: pointer;
             }
         }
-    }
-}
