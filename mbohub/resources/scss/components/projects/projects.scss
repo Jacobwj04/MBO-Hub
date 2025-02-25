@@ -21,6 +21,7 @@ $color-red: rgba(224, 51, 68, 1);
         align-items: center;
         justify-content: center;
         gap: 2em;
+        flex-wrap: wrap;
 
         .project {
             list-style: none;
