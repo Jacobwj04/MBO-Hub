@@ -1,7 +1,7 @@
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "./project-component";
 import { Banner } from "@/Layouts/banner";
-import Calender from "@/Components/calender";
+import Calender from "@/Components/calender/calender";
 
 function Welcome() {
     return (
