@@ -2,6 +2,7 @@ import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "../Components/project-component";
 import FooterComponent from "./Contact/footer";
 import { Banner } from "@/Layouts/banner";
+import Calender from "@/Components/calender/calender";
 
 function Welcome() {
     return (
@@ -33,6 +34,8 @@ function Welcome() {
 
                 </ul>
             </section>
+
+            <Calender />
 
             {/* Footer Section */}
             <FooterComponent />
