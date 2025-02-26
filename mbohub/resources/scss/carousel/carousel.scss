@@ -1,0 +1,52 @@
+.carousel {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+}
+
+.carousel-image {
+    width: calc(100% / 4);
+    height: 15em;
+    object-fit: cover;
+    padding: .5em;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: .5em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.prev {
+    left: 1em;
+}
+
+.next {
+    right: 1em;
+}
+
+
+@media (max-width: 900px) {
+    .carousel-image {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .carousel-image {
+        width: 100%;
+    }
+}
