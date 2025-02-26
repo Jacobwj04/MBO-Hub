@@ -70,34 +70,32 @@ export default function Calender() {
     });
 
     return (
-        <>
+        <article className="calender">
+            <h2>Evenementenkalender</h2>
             <MonthYearSlider onMonthYearChange={handleMonthYearChange} />
-            <article className="calender">
-                <h2>Evenementenkalender</h2>
-                <ul className="calender__dates">
-                    {filteredActivities.length > 0 ? (
-                        filteredActivities.map((activity, index) => (
-                            <li className="calender__activity" key={activity.title + activity.date}>
-                                <figure className="calender__date">
-                                    <span id="date-of-activity">{activity.date}</span>
-                                </figure>
-                                <div></div>
-                                <section className="calender__activities">
-                                    <div className="calender__header">
-                                        <h2 className="calender__title">{activity.title}</h2>
-                                        <span className="calender__label">{activity.label}</span>
-                                    </div>
-                                    <p className="calender__text">{activity.text}</p>
-                                    <p className="calender__text">Locatie: {activity.location}</p>
-                                    <h3 className="calender__subHeading">{activity.subHeading}</h3>
-                                </section>
-                            </li>
-                        ))
-                    ) : (
-                        <></>
-                    )}
-                </ul>
-            </article>
-        </>
+            <ul className="calender__dates">
+                {filteredActivities.length > 0 ? (
+                    filteredActivities.map((activity, index) => (
+                        <li className="calender__activity" key={activity.title + activity.date}>
+                            <figure className="calender__date">
+                                <span id="date-of-activity">{activity.date}</span>
+                            </figure>
+                            <div></div>
+                            <section className="calender__activities">
+                                <div className="calender__header">
+                                    <h2 className="calender__title">{activity.title}</h2>
+                                    <span className="calender__label">{activity.label}</span>
+                                </div>
+                                <p className="calender__text">{activity.text}</p>
+                                <p className="calender__text">Locatie: {activity.location}</p>
+                                <h3 className="calender__subHeading">{activity.subHeading}</h3>
+                            </section>
+                        </li>
+                    ))
+                ) : (
+                    <></>
+                )}
+            </ul>
+        </article>
     );
 }

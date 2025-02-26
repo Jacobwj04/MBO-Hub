@@ -1,0 +1,39 @@
+$red: #d63041;
+@use "sass:color";
+
+.date{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+
+    &__wrapper{
+        width: 20em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+
+    &__button{
+        border: none;
+        width: 3em;
+        aspect-ratio: 1/1;
+        background: $red;
+        border-radius: 50%;
+
+        svg{
+            color: white;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background: color.adjust($red, $lightness: -10%);
+        }
+    }
+
+    span{
+        font-size: 1.5em;
+    }
+}
