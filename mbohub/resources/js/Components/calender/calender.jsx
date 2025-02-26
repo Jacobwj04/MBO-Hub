@@ -93,7 +93,18 @@ export default function Calender() {
                         </li>
                     ))
                 ) : (
-                    <></>
+                    <li className="calender__activity">
+                        <div></div>
+                        <section className="calender__activities">
+                            <div className="calender__header">
+                                <h2 className="calender__title">Geen activiteit op dit moment</h2>
+                                <span className="calender__label"></span>
+                            </div>
+                            <p className="calender__text"></p>
+                            <p className="calender__text">Locatie:</p>
+                            <h3 className="calender__subHeading"></h3>
+                        </section>
+                    </li>
                 )}
             </ul>
         </article>
