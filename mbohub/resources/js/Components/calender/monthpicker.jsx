@@ -22,10 +22,10 @@ export function MonthYearSlider({ onMonthYearChange }) { // Changed to named exp
 
   const handlePrevMonth = () => {
     if (monthIndex === 0) {
-      setYear(year - 1);
+      setYear((prevYear) => prevYear - 1);
       setMonthIndex(11);
     } else {
-      setMonthIndex(monthIndex - 1);
+      setMonthIndex((prevMonthIndex) => prevMonthIndex - 1);
     }
   };
 
