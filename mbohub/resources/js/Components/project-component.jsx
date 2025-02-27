@@ -5,13 +5,19 @@ export function Project({ title, text, topLabelText, bottomLabelText, date, read
 
     const openModal = () => {
         setIsOpen(true);
-        document.body.classList.add("dark-background"); 
+        let projectComponents = document.querySelectorAll('.project-component');
+
+        if (projectComponents) {
+            for (let i = 0; i < projectComponents.length; i++) {
+                projectComponents[i].style.zIndex = '-1';
+            }
+        }
         document.body.style.overflow = "hidden";
     };
-    
+
     const closeModal = () => {
         setIsOpen(false);
-        document.body.classList.remove("dark-background"); 
+        document.body.classList.remove("dark-background");
         document.body.style.overflow = "";
     };
 
@@ -51,21 +57,25 @@ export function Project({ title, text, topLabelText, bottomLabelText, date, read
 
 export function Modal({ title, text, date, onClose }) {
     return (
-        <div className="modal-overlay">
-            <button className="modal-close" onClick={onClose}>X</button>
-            <div className="modal-content">
-                <div className="modal-content-top">
-                    <h2 className="modal-header">header</h2>
-                    <time datetime="">{date}</time>
-                </div>
-                <figure className="modal-content-img">
-                    <img className="modal-img" src="https://placehold.co/400x200" alt="" />
-                </figure>
-                <div className="modal-content-bottom">
-                    <p className="modal-p">lorem ipsum. Lorem ipsum</p>
-                    <button className="modal-btn">Bekijk het verhaal</button>
+        <>
+            <div className="model__background">
+                <div className="modal-overlay">
+                    <button className="modal-close" onClick={onClose}>X</button>
+                    <div className="modal-content">
+                        <div className="modal-content-top">
+                            <h2 className="modal-header">header</h2>
+                            <time datetime="">{date}</time>
+                        </div>
+                        <figure className="modal-content-img">
+                            <img className="modal-img" src="https://placehold.co/400x200" alt="" />
+                        </figure>
+                        <div className="modal-content-bottom">
+                            <p className="modal-p">lorem ipsum. Lorem ipsum</p>
+                            <button className="modal-btn">Bekijk het verhaal</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

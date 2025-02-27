@@ -2,13 +2,13 @@ $color-purple: rgb(94 50 137);
 $border-radius: 1em;
 $color-red: rgba(224, 51, 68, 1);
 
-.dark-background {
-    background: rgba(0, 0, 0, .8);
-    transition: background-color 0.3s ease-in-out;
-    z-index: 50;
-    width: 100vw;
-    height: 100vh;
-}
+// .dark-background {
+//     background: rgba(0, 0, 0, .8);
+//     transition: background-color 0.3s ease-in-out;
+//     z-index: 50;
+//     width: 100vw;
+//     height: 100vh;
+// }
 
 .project-component {
     z-index: 1;
@@ -107,7 +107,19 @@ $color-red: rgba(224, 51, 68, 1);
     }
 }
 
-
+.model{
+    &__background{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 .modal-overlay {
     width: 40%;
     height: 40em;
