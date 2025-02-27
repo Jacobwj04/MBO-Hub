@@ -22,11 +22,11 @@ function Welcome() {
             <section className="section events">
                 <h2>Welkom bij MBO-Hub!</h2>
                 <p>
-                    MBO-Hub Amsterdam is van start! MBO-Hub Amsterdam is een samenwerking tussen ROC van Amsterdam, 
-                    Mediacollege Amsterdam en HMC, opgericht in het kader van Amsterdam 750. Wij zijn dé plek waar 
-                    mbo-studenten, bedrijven, de Gemeente Amsterdam en initiatieven samenkomen om te werken aan de 
-                    toekomst van onze stad. De MBO-Hub biedt studenten een kans om hun talenten in de praktijk te 
-                    brengen, door ze te betrekken bij projecten, evenementen en initiatieven rondom het 750-jarig jubileum 
+                    MBO-Hub Amsterdam is van start! MBO-Hub Amsterdam is een samenwerking tussen ROC van Amsterdam,
+                    Mediacollege Amsterdam en HMC, opgericht in het kader van Amsterdam 750. Wij zijn dé plek waar
+                    mbo-studenten, bedrijven, de Gemeente Amsterdam en initiatieven samenkomen om te werken aan de
+                    toekomst van onze stad. De MBO-Hub biedt studenten een kans om hun talenten in de praktijk te
+                    brengen, door ze te betrekken bij projecten, evenementen en initiatieven rondom het 750-jarig jubileum
                     van Amsterdam.
                 </p>
                 <div className="oberpop">
@@ -38,23 +38,27 @@ function Welcome() {
             <section className="section projects">
                 <h2>Projecten</h2>
                 <div className="project-container">
-                    <Project 
-                        date="8 november 2023" 
-                        circle={true} 
-                        readMore="Lees meer" 
-                        onClick={() => openModal({ title: "Project 1", text: "Dit is project 1." })} 
+                    <Project
+                        title={"title"}
+                        date="8 november 2023"
+                        circle={true}
+                        readMore="Lees meer"
+                        onClick={() => openModal({ title: "Project 1", text: "Dit is project 1." })}
+                        button={true}
                     />
-                    <Project 
-                        topLabelText="Dit is een label" 
-                        bottomLabelText="Dit is een label" 
-                        onClick={() => openModal({ title: "Project 2", text: "Dit is project 2." })} 
+                    <Project
+                        title={"title 2"}
+                        date="4 mei 2024"
+                        topLabelText="Dit is een label"
+                        bottomLabelText="Dit is een label"
+                        onClick={() => openModal({ title: "Project 2", text: "Dit is project 2." })}
                     />
                 </div>
             </section>
 
             {/* Toon Modal als een project is geselecteerd */}
             {selectedProject && (
-                <Modal title={selectedProject.title} text={selectedProject.text} onClose={closeModal} />
+                <Modal title={selectedProject.title} text={selectedProject.text} onClose={closeModal} button={false} />
             )}
 
             {/* Footer Section */}

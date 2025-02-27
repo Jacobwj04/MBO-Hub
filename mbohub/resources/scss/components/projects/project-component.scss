@@ -12,7 +12,7 @@ $color-red: rgba(224, 51, 68, 1);
 
 .project-component {
     z-index: 1;
-    width: 29.7vw;
+    width: 26vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,7 +21,7 @@ $color-red: rgba(224, 51, 68, 1);
     border-radius: $border-radius;
 
     .image-container {
-        width: 45em;
+        width: 100%;
         height: 17em;
         border-top-left-radius: $border-radius;
         border-top-right-radius: $border-radius;
@@ -63,8 +63,8 @@ $color-red: rgba(224, 51, 68, 1);
     }
 
     .project-content {
-        padding: 2em;
-        width: 30.3vw;
+        padding: 1em 2em;
+        width: 100%;
         height: 17em;
         border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
@@ -76,10 +76,13 @@ $color-red: rgba(224, 51, 68, 1);
             padding: .5em .9em;
             font-size: 1em;
             border-radius: 1em;
+            width: 9em;
+            margin-bottom: .5em;
         }
 
         .project-date {
             font-size: 1.5em;
+            margin-right: 1em;
         }
 
         .project-h2 {
@@ -122,7 +125,7 @@ $color-red: rgba(224, 51, 68, 1);
 }
 .modal-overlay {
     width: 40%;
-    height: 40em;
+    min-height: 40em;
     background: white;
     position: absolute;
     z-index: 2;
@@ -132,25 +135,38 @@ $color-red: rgba(224, 51, 68, 1);
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1em 0em;
 
     .modal-close {
         position: absolute;
-        right: 1%;
-        top: 1%;
+        right: 2%;
+        top: 2%;
+        background: none;
+        border: none;
+        font-size: 2em;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .modal-content {
         width: 95%;
-        height: 38em;
+        min-height: 38em;
         display: flex;
         flex-direction: column;
 
         .modal-content-top {
             height: 12%;
+            margin-bottom: 1em;
 
             .modal-header {
                 color: $color-purple;
                 font-size: 2.5em;
+            }
+
+            .modal-date {
+                font-size: 1.5em;            
             }
         }
 
@@ -184,6 +200,14 @@ $color-red: rgba(224, 51, 68, 1);
                 background: white;
                 border: .1em solid rgba(0, 0, 0, .1);
                 border-radius: .5em;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .modal-nobtn {
+                display: none;
             }
         }
     }
