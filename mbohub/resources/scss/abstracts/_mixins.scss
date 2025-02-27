@@ -1,0 +1,44 @@
+@use "sass:map";
+@use "sass:color";
+@use "./colors";
+
+@mixin button($backgroundcolor, $textColor, $roundness, $width: 5em, $absolute: 0, $sliderButton: 0){
+    position: relative;
+    border: none;
+    width: $width;
+    aspect-ratio: 1/1;
+    background: $backgroundcolor;
+    border-radius: $roundness;
+
+    svg{
+        color: $textColor;
+    }
+
+    span{
+        font-size: 3em;
+        line-height: 50%;
+    }
+
+    @if $absolute != 0{
+        position: absolute !important;
+    }
+
+    @if $sliderButton != 0{
+        &--next{
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--prev{
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        } 
+    }
+
+    &:hover{
+        cursor: pointer;
+        background: color.adjust($backgroundcolor, $lightness: -10%);
+    }
+}
