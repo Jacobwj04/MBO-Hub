@@ -2,6 +2,7 @@ import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "../Components/project-component";
 import FooterComponent from "./Contact/footer";
 import { Banner } from "@/Layouts/banner";
+import Calender from "@/Components/calender/calender";
 
 function Welcome() {
     return (
@@ -25,14 +26,16 @@ function Welcome() {
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
 
-                    <Project labelText={"Dit is een label"} />
-                    <Project labelText={"Dit is een test"} />
+                    <Project title={"project"} labelText={"Dit is een label"} text={"lorem ipsum lorem ipsum"} />
+                    <Project title={"project"} labelText={"Dit is een test"} text={"lorem ipsum lorem ipsum"} />
 
-                    <Project date={"8 november 2023"} circle={true} readMore={"Lees meer"} />
-                    <Project topLabelText={"Dit is een label"} bottomLabelText={"Dit is een label"} />
+                    <Project title={"project"} date={"8 november 2023"} circle={true} text={"lorem ipsum lorem ipsum"} readMore={"Lees meer"} />
+                    <Project title={"project"} topLabelText={"Dit is een label"} text={"lorem ipsum lorem ipsum"} bottomLabelText={"Dit is een label"} />
 
                 </ul>
             </section>
+
+            <Calender />
 
             {/* Footer Section */}
             <FooterComponent />

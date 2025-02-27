@@ -1,5 +1,6 @@
-$red: #d63041;
-@use "sass:color";
+@use "../../abstracts/mixins";
+@use '../../abstracts/colors';
+@use "sass:map";
 
 
 .slider{
@@ -20,37 +21,6 @@ $red: #d63041;
     }
 
     &__button{
-        position: absolute;
-        width: 5em;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-        background: $red;
-        border: none;
-        color: white;
-        font-size: 1em;
-        margin-inline: 1em;
-        transition: all 0.2s;
-
-        span{
-            font-size: 3em;
-            line-height: 50%;
-        }
-
-        &--next{
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &--prev{
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &:hover{
-            cursor: pointer;
-            background: color.adjust($red, $lightness: -10%);
-        }
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1", 1, 1);
     }
 }

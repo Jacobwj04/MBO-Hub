@@ -1,15 +1,20 @@
-import { usePage } from "@inertiajs/react";
-import Navigation from "./Navigation";
+import { usePage } from '@inertiajs/react';
+import Navigation from './Navigation';
 
-export default function AuthenticatedLayout({children}){
+export default function AuthenticatedLayout({ children }) {
 
     const user = usePage().props.auth.user;
+    console.log(user);
 
-    return(
 
+    return (
         <>
-            <Navigation/>
-            <main className="auth">{children}</main>
+            <Navigation />
+            { user &&
+                <>
+                    <main className="auth">{ children }</main>
+                </>
+            }
         </>
-    )
+    );
 }

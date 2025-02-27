@@ -6,4 +6,7 @@
 @use "./components/auth/auth";
 @use "./components/banner/banner.scss";
 @use "./components/slider/slider.scss";
-@use "./about-us/aboutUs.scss";
+@use './components/calender/calender.scss';
+@use "./components/calender/date.scss";
+@use "./components/about-us/aboutUs.scss";
+@use "./components/carousel/carousel.scss"
