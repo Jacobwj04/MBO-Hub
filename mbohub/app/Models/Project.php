@@ -10,14 +10,18 @@ class Project extends Model
 
     use HasFactory;
 
+    protected $generatedColumns = [
+        'id',
+        'created_at',
+        'updated_at',
+        ];
+
     protected $fillable = [
-        'naam',
+        'title',
+        'summary',
+        'location',
+        'text',
+        'highlight',
         'image',
-        'kermerk1',
-        'kenmerk2',
-        'kenmerk3',
-        'datum',
-        'locatie',
-        'info'
     ];
 }

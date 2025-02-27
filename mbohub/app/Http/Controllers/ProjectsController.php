@@ -8,14 +8,16 @@ use Inertia\Inertia;
 
 class ProjectsController extends Controller
 {
-    public function projects()
+    public function index()
     {
-        $projects = Project::all();
-        return Inertia::render('Projects/Projects', ['projects' => $projects]);
+	    $projects = Project::all();
+
+	    return Inertia::render('Projects/Projects', ['projects' => $projects]);
     }
 
-    public function project(Project $project)
-    {
-        return Inertia::render('Projects/Project', ['project' => $project]);
+    public function show(int $id){
+        $projects = Project::findOrFail($id);
+
+        return Inertia::render('Projects/Project', ['project' => $projects]);
     }
 }

@@ -1,4 +1,4 @@
-import { usePage } from "@inertiajs/react";
+import { router, usePage } from '@inertiajs/react';
 import Navlink from '../Components/NavLink';
 
 function Navigation({ showBigImage }) {
@@ -16,7 +16,7 @@ function Navigation({ showBigImage }) {
                 </figure>
             )}
             <nav className="nav">
-                <Navlink href={route('projects.projects')}>Projects</Navlink>
+                <Navlink href={route('projects.index')}>Projects</Navlink>
                 <Navlink href={route('about.about')}>About</Navlink>
                 <Navlink href={route('skills.skills')}>Skills</Navlink>
                 <Navlink href={route('contact.contact')}>Contact</Navlink>

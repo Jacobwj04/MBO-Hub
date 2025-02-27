@@ -9,8 +9,8 @@ function Project() {
         <AuthenticatedLayout>
             <section className="project">
                 <section className="project__admin">
-                    <a href={route('projects.edit', [project.id])} className="project__edit">Edit</a>
-                    <form action={route('projects.destroy', [project.id])} className="project__delete" method="post">
+                    <a href={route('admin.edit', [project.id])} className="project__edit">Edit</a>
+                    <form action={route('admin.destroy', [project.id])} className="project__delete" method="post">
                         <input type="hidden" name="_method" value="delete" />
                         <input type="hidden" name="_token" value={csrf} />
                         <input type="submit" value="Delete" />
@@ -20,13 +20,11 @@ function Project() {
                 <section className="project__view">
 
                     <section className="project__left">
-                        <h2 className="project__name">{project.naam}</h2>
-                        <p className="project__info">{project.info}</p>
-                        <section className="kenmerken">
-                            <h5 className="kenmerk">{project.kermerk1}</h5>
-                            <h5 className="kenmerk">{project.kenmerk2}</h5>
-                            <h5 className="kenmerk">{project.kenmerk3}</h5>
-                        </section>
+                        <h2 className="project__name">{ project.title }</h2>
+                        <h3>{ project.location }</h3>
+                        <h3>{ project.created_at }</h3>
+                        <p className="project__info">{ project.summary }</p>
+
                     </section>
 
                     <section className="project__right">

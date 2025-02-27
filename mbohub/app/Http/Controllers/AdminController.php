@@ -15,6 +15,7 @@ class AdminController extends Controller
     public function index()
     {
         $projects = Project::all();
+
         return Inertia::render('Projects/Projects', ['projects' => $projects]);
     }
 
@@ -31,20 +32,21 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        print_r($_POST);
+        print_r($_FILES);
         $validatedData = $this->validateData($request);
-        $project = Project::create($validatedData);
-        return redirect(route('projects.projects'));
+        $project       = (new \App\Models\Project)->forcefill($validatedData)->save();
 
-        // return $request;
+//        return redirect(route('projects.projects'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        return Inertia::render('Projects/Projects', ['projects' => $id]);
-    }
+//    public function show(string $id)
+//    {
+//        return Inertia::render('Projects/Projects', ['projects' => $id]);
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -58,14 +60,15 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(request $request, string $id)
     {
+        print_r($request);
         $project = Project::findOrFail($id);
-        $data = $this->validateData($request);
+        $data    = $this->validateData($request);
         $project->update($data);
         $project->save();
 
-        return redirect(route('projects.projects'));
+        return redirect(route('projects.index'));
     }
 
     /**
@@ -75,20 +78,19 @@ class AdminController extends Controller
     {
         $project = Project::findOrFail($id);
         $project->delete();
+
         return redirect(route('projects.projects'));
     }
 
     protected function validateData(Request $request)
     {
         $data = $request->validate([
-            'naam' => 'required',
-            'image' => 'required',
-            'kermerk1' => 'required',
-            'kenmerk2' => 'required',
-            'kenmerk3' => 'required',
-            'datum' => '',
-            'locatie' => 'required',
-            'info' => 'required'
+            'title'    => 'required',
+            'summary' => 'required',
+            'location' => 'required',
+            'text' => 'required',
+            'highlights'    => '',
+            'image'  => 'required',
         ]);
 
         return $data;

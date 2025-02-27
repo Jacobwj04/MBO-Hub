@@ -5,15 +5,15 @@ import { useState } from "react";
 function Edit() {
     const project = usePage().props.project;
     const csrf = document.querySelector('meta[name=csrf-token]').getAttribute("content");
+    const user = usePage().props.auth.user.name;
 
     const [form, setForm] = useState({
-        naam: project.naam,
-        image: project.image,
-        kermerk1: project.kermerk1,
-        kenmerk2: project.kenmerk2,
-        kenmerk3: project.kenmerk3,
-        locatie: project.locatie,
-        info: project.info
+        title: project.title,
+        summary: project.summary,
+        location: project.location,
+        text: project.text,
+        highlights: project.highlights,
+        image: project.image
     });
 
     const editInputs = (event) => {
@@ -27,17 +27,15 @@ function Edit() {
     return (
         <AuthenticatedLayout>
             <section className="edit">
-                <form action={route('projects.update', [project.id])} className="edit__form" method="post">
+                <form action={route('admin.update', [project.id])} className="edit__form" method="post">
                     <input type="hidden" name="_method" value="PUT" />
-                    <input type="hidden" name="_token" value={csrf} />
-                    <input type="text" name="naam" value={form.naam} onChange={editInputs} placeholder="Naam" />
-                    <input type="text" name="image" value={form.image} onChange={editInputs} placeholder="image" />
-                    <input type="text" name="kermerk1" value={form.kermerk1} onChange={editInputs} placeholder="kenmerk1" />
-                    <input type="text" name="kenmerk2" value={form.kenmerk2} onChange={editInputs} placeholder="kenmerk2" />
-                    <input type="text" name="kenmerk3" value={form.kenmerk3} onChange={editInputs} placeholder="kenmerk3" />
-                    <input type="text" name="datum" value={form.datum} onChange={editInputs} placeholder="datum" />
-                    <input type="text" name="locatie" value={form.locatie} onChange={editInputs} placeholder="locatie" />
-                    <input type="text" name="info" value={form.info} onChange={editInputs} placeholder="info" />
+                    <input type="hidden" name="_token" value={ csrf } />
+                    <input type="text" name="title" placeholder="Titel" value={form.title} onChange={editInputs}/>
+                    <textarea name="summary" placeholder="Sammenvatting" value={form.summary} onChange={editInputs}/>
+                    <input type="text" name="location" placeholder="Locatie" value={form.location} onChange={editInputs}/>
+                    <textarea name="text" placeholder="Text" value={form.text} onChange={editInputs}/>
+                    <textarea name="highlights" placeholder="Uitgelicht" value={form.highlights} onChange={editInputs}/>
+                    {/*<input type="file" name="image" accept="image/*" onChange={editInputs}/>*/}
                     <input type="submit" />
                 </form>
             </section>

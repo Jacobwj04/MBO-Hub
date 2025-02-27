@@ -1,5 +1,5 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { usePage } from "@inertiajs/react";
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { usePage } from '@inertiajs/react';
 
 function Form() {
 
@@ -11,17 +11,16 @@ function Form() {
 
     return (
         <AuthenticatedLayout>
-            <form action={route('projects.store')} method="post">
+            <form encType="multipart/form-data" action={ route('admin.store') }>
                 <input type="hidden" name="_token" value={csrf} />
-                <input type="hidden" name="naam" value={user} />
-                <input type="text" name="image" placeholder="image" />
-                <input type="text" name="kermerk1" placeholder="kermerk1" />
-                <input type="text" name="kenmerk2" placeholder="kenmerk2" />
-                <input type="text" name="kenmerk3" placeholder="kenmerk3" />
-                <input type="text" name="datum" placeholder="datum" />
-                <input type="text" name="locatie" placeholder="locatie" />
-                <input type="text" name="info" placeholder="info" />
-                <input type="submit" />
+                <input type="hidden" name="naam" value={ user } />
+                <input type="text" name="title" placeholder="Titel"/>
+                <textarea name="summary" placeholder="Sammenvatting"/>
+                <input type="text" name="location" placeholder="Locatie"/>
+                <textarea name="text" placeholder="Text"/>
+                <textarea name="highlights" placeholder="Uitgelicht"/>
+                <input type="file" name="image" accept="image/*"/>
+                <input type="submit"/>
             </form>
         </AuthenticatedLayout>
     );
