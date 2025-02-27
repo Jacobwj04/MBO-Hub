@@ -9,13 +9,18 @@
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: fit-content;
-}
 
-.carousel-image {
-    width: calc(100% / 4);
-    height: 15em;
-    object-fit: cover;
-    padding: .5em;
+    .carousel-link {
+        width: auto;
+        display: flex;
+
+        .carousel-image {
+            width: 100%;
+            height: 15em;
+            object-fit: cover;
+            padding: .5em;
+        }
+    }
 }
 
 .carousel-prev {

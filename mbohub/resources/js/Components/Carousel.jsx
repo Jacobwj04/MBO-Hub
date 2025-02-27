@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
 const images = [
-    "https://placehold.co/600x400",
-    "https://placehold.co/550x400",
-    "https://placehold.co/500x400",
-    "https://placehold.co/600x400",
-    "https://placehold.co/550x400",
-    "https://placehold.co/500x400",
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image1" },
+    { placeholder: "https://placehold.co/550x400", link: "https://example.com/image2" },
+    { placeholder: "https://placehold.co/500x400", link: "https://example.com/image3" },
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image4" },
+    { placeholder: "https://placehold.co/550x400", link: "https://example.com/image5" },
+    { placeholder: "https://placehold.co/500x400", link: "https://example.com/image6" },
 ];
 
 function MultiCarousel() {
@@ -40,8 +40,10 @@ function MultiCarousel() {
     return (
         <div className="carousel">
             <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}>
-                {images.map((src, idx) => (
-                    <img key={idx} src={src} alt={`Slide ${idx}`} className="carousel-image" />
+                {images.map((image, idx) => (
+                    <a className="carousel-link" key={idx} href={image.link} target="_blank" rel="noopener noreferrer">
+                        <img src={image.placeholder} alt={`Slide ${idx}`} className="carousel-image" />
+                    </a>
                 ))}
             </div>
             <button className="carousel-prev" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % (images.length - (visibleSlides - 1)))}>
