@@ -1,6 +1,7 @@
 @use '../../abstracts/colors';
 @use "sass:map";
 @use "sass:color";
+@use "../../abstracts/mixins";
 
 .date{
     width: 100%;
@@ -18,21 +19,7 @@
     }
 
     &__button{
-        position: relative;
-        border: none;
-        width: 3em;
-        aspect-ratio: 1/1;
-        background: map.get(colors.$backgroundColors, "red");
-        border-radius: 50%;
-
-        svg{
-            color: map.get(colors.$textColor, "white");
-        }
-
-        &:hover{
-            cursor: pointer;
-            background: color.adjust(map.get(colors.$backgroundColors, "red"), $lightness: -10%);
-        }
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1");
     }
 
     span{
