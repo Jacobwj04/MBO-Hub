@@ -1,28 +1,28 @@
 import { usePage } from "@inertiajs/react";
-import './Navigation.css';
 import Navlink from '../Components/NavLink';
 
-function Navigation() {
+function Navigation({ showBigImage }) {
     const { auth } = usePage().props;
 
     return (
         <header className="header">
-            <div className="logo-container">
-                <img
-                    src="/img/750slinger.png"
-                    alt="Logo"
-                    className="header-logo"
-                />
-            </div>
+            { showBigImage &&  (
+                <figure className="header__figure">
+                    <img
+                        src="/img/750slinger.png"
+                        alt="Logo"
+                        className="header__logo"
+                    />
+                </figure>
+            )}
             <nav className="nav">
-                
-                <a href={route('projects.projects')} className="nav-link">Projects</a>
-                <a href={route('about.about')} className="nav-link">About</a>
-                <a href={route('partners.partners')} className="nav-link">Partners</a>
-                <a href={route('contact.contact')} className="nav-link">Contact</a>
-                <a href={route('login')} className="nav-link">Login</a>
+                <Navlink href={route('projects.projects')}>Projects</Navlink>
+                <Navlink href={route('about.about')}>About</Navlink>
+                <Navlink href={route('partners.partners')}>Partners</Navlink>
+                <Navlink href={route('contact.contact')}>Contact</Navlink>
+                <Navlink href={route('login')}>Login</Navlink>
 
-                <div className="user-info">
+                {/* <div className="user-info">
                     {auth.user ? (
                         <div className="login-user">
                             <div>Welkom</div>
@@ -32,8 +32,15 @@ function Navigation() {
 
                         <span className="guest-name">Guest</span>
                     )}
-                </div>
+                </div> */}
             </nav>
+            <figure className="header__hubLogo">
+                <img
+                    src="/img/MBO-Hub-logo.webp"
+                    alt="Logo"
+                    className="header__logo"
+                />
+            </figure>
         </header>
     );
 }

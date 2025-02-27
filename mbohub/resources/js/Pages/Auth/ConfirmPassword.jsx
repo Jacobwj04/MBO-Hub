@@ -4,7 +4,6 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, useForm } from '@inertiajs/react';
-import '@/path/to/login.css'; 
 
 export default function ConfirmPassword() {
     const { data, setData, post, processing, errors, reset } = useForm({

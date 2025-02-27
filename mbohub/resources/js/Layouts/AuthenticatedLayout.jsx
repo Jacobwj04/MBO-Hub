@@ -8,7 +8,7 @@ export default function AuthenticatedLayout({children}){
     return(
 
         <>
-            <Navigation/>
+            <Navigation />
             <main className="main">{children}</main>
         </>
     )

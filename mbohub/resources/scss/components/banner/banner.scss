@@ -1,0 +1,74 @@
+@use "../../abstracts/mixins";
+@use '../../abstracts/colors';
+@use "sass:map";
+
+.banner{
+    width: 100%;
+    height: 75vh;
+    position: relative;
+
+    &__figure{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__color{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: map.get(colors.$backgroundColors, "purple");
+        width: 100vw;
+        height: 100%;
+    }
+
+    &__container{
+        max-width: 144em;
+        margin-inline: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        z-index: 4;
+    }
+
+    &__title{
+        font-size: 4em;
+        color: map.get(colors.$textColor, "white");
+        text-align: center;
+    }
+
+    &__subTitle{
+        font-size: 2.5em;
+        color: map.get(colors.$textColor, "white");
+        text-align: center;
+    }
+
+    &__buttonWrapper{
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+    }
+
+
+    &__button{
+        margin-top: 2em;
+        padding: 1em 3em;
+        font-size: 1.5em;
+        text-decoration: none;
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, auto, "0/0", 0, 0, 1)
+
+    }
+}
