@@ -2,7 +2,16 @@ $color-purple: rgb(94 50 137);
 $border-radius: 1em;
 $color-red: rgba(224, 51, 68, 1);
 
+.dark-background {
+    background: rgba(0, 0, 0, .8);
+    transition: background-color 0.3s ease-in-out;
+    z-index: 50;
+    width: 100vw;
+    height: 100vh;
+}
+
 .project-component {
+    z-index: 1;
     width: 29.7vw;
     display: flex;
     align-items: center;
@@ -21,6 +30,7 @@ $color-red: rgba(224, 51, 68, 1);
         justify-content: center;
         flex-direction: column;
         position: relative;
+        z-index: 1;
 
         .project-top-label {
             position: absolute;
@@ -94,5 +104,75 @@ $color-red: rgba(224, 51, 68, 1);
     &:hover {
         box-shadow: 0em .5em 2em rgba(0, 0, 0, .1);
         cursor: pointer;
+    }
+}
+
+
+.modal-overlay {
+    width: 40%;
+    height: 40em;
+    background: white;
+    position: absolute;
+    z-index: 2;
+    right: 30%;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .modal-close {
+        position: absolute;
+        right: 1%;
+        top: 1%;
+    }
+
+    .modal-content {
+        width: 95%;
+        height: 38em;
+        display: flex;
+        flex-direction: column;
+
+        .modal-content-top {
+            height: 12%;
+
+            .modal-header {
+                color: $color-purple;
+                font-size: 2.5em;
+            }
+        }
+
+        .modal-content-img {
+            height: 60%;
+            margin-bottom: 1em;
+
+            .modal-img {
+                border-radius: 2em;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .modal-content-bottom {
+            height: 28%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .modal-p {
+                font-size: 1.5em;
+            }
+
+            .modal-btn {
+                margin-top: 1em;
+                display: block;
+                width: 10em;
+                padding: .5em;
+                background: white;
+                border: .1em solid rgba(0, 0, 0, .1);
+                border-radius: .5em;
+            }
+        }
     }
 }

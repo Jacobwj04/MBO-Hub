@@ -30,5 +30,5 @@ function Projects() {
     );
 }
 
-import '../css/Projects.css';
+// import '../css/Projects.css';
 export default Projects;

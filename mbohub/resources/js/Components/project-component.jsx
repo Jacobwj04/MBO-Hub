@@ -3,8 +3,17 @@ import React, { useState } from "react";
 export function Project({ title, text, topLabelText, bottomLabelText, date, readMore, circle, textcentered }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const openModal = () => setIsOpen(true);
-    const closeModal = () => setIsOpen(false);
+    const openModal = () => {
+        setIsOpen(true);
+        document.body.classList.add("dark-background"); 
+        document.body.style.overflow = "hidden";
+    };
+    
+    const closeModal = () => {
+        setIsOpen(false);
+        document.body.classList.remove("dark-background"); 
+        document.body.style.overflow = "";
+    };
 
     return (
         <>
@@ -35,18 +44,27 @@ export function Project({ title, text, topLabelText, bottomLabelText, date, read
                 </div>
             </div>
 
-            {isOpen && <Modal title={title} text={text} onClose={closeModal} />}
+            {isOpen && <Modal title={title} text={text} date={date} onClose={closeModal} />}
         </>
     );
 }
 
-export function Modal({ title, text, onClose }) {
+export function Modal({ title, text, date, onClose }) {
     return (
         <div className="modal-overlay">
+            <button className="modal-close" onClick={onClose}>X</button>
             <div className="modal-content">
-                <button className="modal-close" onClick={onClose}>X</button>
-                <h2>Dit is een header</h2>
-                <p>Dit is een p</p>
+                <div className="modal-content-top">
+                    <h2 className="modal-header">header</h2>
+                    <time datetime="">{date}</time>
+                </div>
+                <figure className="modal-content-img">
+                    <img className="modal-img" src="https://placehold.co/400x200" alt="" />
+                </figure>
+                <div className="modal-content-bottom">
+                    <p className="modal-p">lorem ipsum. Lorem ipsum</p>
+                    <button className="modal-btn">Bekijk het verhaal</button>
+                </div>
             </div>
         </div>
     );
