@@ -44,10 +44,10 @@ function MultiCarousel() {
                     <img key={idx} src={src} alt={`Slide ${idx}`} className="carousel-image" />
                 ))}
             </div>
-            <button className="prev" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % (images.length - (visibleSlides - 1)))}>
+            <button className="carousel-prev" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % (images.length - (visibleSlides - 1)))}>
                 ◀
             </button>
-            <button className="next" onClick={() => setCurrentIndex((currentIndex + 1) % (images.length - (visibleSlides - 1)))}>
+            <button className="carousel-next" onClick={() => setCurrentIndex((currentIndex + 1) % (images.length - (visibleSlides - 1)))}>
                 ▶
             </button>
         </div>
