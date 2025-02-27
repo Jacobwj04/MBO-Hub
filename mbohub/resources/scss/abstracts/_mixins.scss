@@ -2,13 +2,16 @@
 @use "sass:color";
 @use "./colors";
 
-@mixin button($backgroundcolor, $textColor, $roundness, $width: 5em, $absolute: 0, $sliderButton: 0){
+@mixin button($backgroundcolor, $textColor, $roundness, $width: 5em, $aspectRatio: "1/1", $absolute: 0, $sliderButton: 0, $differntColors: 0, $secondBackgroundColor: map.get(colors.$backgroundColors, "white")){
     position: relative;
     border: none;
     width: $width;
-    aspect-ratio: 1/1;
+    @if $aspectRatio == "1/1"{
+        aspect-ratio: 1/1;
+    }
     background: $backgroundcolor;
     border-radius: $roundness;
+    color: $textColor;
 
     svg{
         color: $textColor;
@@ -35,6 +38,17 @@
             top: 50%;
             transform: translateY(-50%);
         } 
+    }
+
+    @if $differntColors != 0{
+        &:last-child{
+            background: $secondBackgroundColor;
+            color: #d63041;
+
+            &:hover{
+                background: color.adjust($secondBackgroundColor, $lightness: -10%) !important;
+            }
+        }
     }
 
     &:hover{

@@ -19,7 +19,7 @@
     }
 
     &__button{
-        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em);
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1");
     }
 
     span{

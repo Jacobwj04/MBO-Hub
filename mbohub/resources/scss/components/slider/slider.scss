@@ -1,8 +1,6 @@
-$red: #d63041;
 @use "../../abstracts/mixins";
 @use '../../abstracts/colors';
 @use "sass:map";
-@use "sass:color";
 
 
 .slider{
@@ -23,6 +21,6 @@ $red: #d63041;
     }
 
     &__button{
-        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, 1, 1);
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1", 1, 1);
     }
 }
