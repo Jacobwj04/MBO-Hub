@@ -1,4 +1,5 @@
-$red: #d63041;
+@use '../../abstracts/colors';
+@use "sass:map";
 @use "sass:color";
 
 .date{
@@ -21,16 +22,16 @@ $red: #d63041;
         border: none;
         width: 3em;
         aspect-ratio: 1/1;
-        background: $red;
+        background: map.get(colors.$backgroundColors, "red");
         border-radius: 50%;
 
         svg{
-            color: white;
+            color: map.get(colors.$textColor, "white");
         }
 
         &:hover{
             cursor: pointer;
-            background: color.adjust($red, $lightness: -10%);
+            background: color.adjust(map.get(colors.$backgroundColors, "red"), $lightness: -10%);
         }
     }
 
