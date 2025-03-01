@@ -4,6 +4,8 @@ import { parse, getMonth, getYear } from 'date-fns';
 import { nl } from 'date-fns/locale';
 
 export default function Calender() {
+    const [hiddenTextVisibility, setHiddenTextVisibility] = useState({}); // Track visibility per activity
+
     const [selectedMonthYear, setSelectedMonthYear] = useState({
         year: new Date().getFullYear(),
         month: new Date().getMonth(),
@@ -12,6 +14,13 @@ export default function Calender() {
     const handleMonthYearChange = (monthYear) => {
         console.log("MonthYear changed to:", monthYear);
         setSelectedMonthYear(monthYear);
+    };
+
+    const showHiddenText = (activityKey) => {
+        setHiddenTextVisibility((prevVisibility) => ({
+            ...prevVisibility,
+            [activityKey]: !prevVisibility[activityKey],
+        }));
     };
 
     const activities = [
@@ -75,23 +84,46 @@ export default function Calender() {
             <MonthYearSlider onMonthYearChange={handleMonthYearChange} />
             <ul className="calender__dates">
                 {filteredActivities.length > 0 ? (
-                    filteredActivities.map((activity, index) => (
-                        <li className="calender__activity" key={activity.title + activity.date}>
-                            <figure className="calender__date">
-                                <span id="date-of-activity">{activity.date}</span>
-                            </figure>
-                            <div></div>
-                            <section className="calender__activities">
-                                <div className="calender__header">
-                                    <h2 className="calender__title">{activity.title}</h2>
-                                    <span className="calender__label">{activity.label}</span>
-                                </div>
-                                <p className="calender__text">{activity.text}</p>
-                                <p className="calender__text">Locatie: {activity.location}</p>
-                                <h3 className="calender__subHeading">{activity.subHeading}</h3>
-                            </section>
-                        </li>
-                    ))
+                    filteredActivities.map((activity, index) => {
+                        const activityKey = `${activity.title}-${activity.date}`; // Unique identifier
+                        return (
+                            <li className="calender__activity" key={activityKey}>
+                                <figure className="calender__date">
+                                    <span id="date-of-activity">{activity.date}</span>
+                                </figure>
+                                <div></div>
+                                <section className="calender__activities" data-expanded={hiddenTextVisibility[activityKey] ? "true" : "false"}>
+                                    <div className="calender__header">
+                                        <h2 className="calender__title">{activity.title}</h2>
+                                        <span className="calender__label">{activity.label}</span>
+                                    </div>
+                                    <p className="calender__text">{activity.text}</p>
+                                    <p className="calender__text">Locatie: {activity.location}</p>
+                                    <h3 className="calender__subHeading">{activity.subHeading}</h3>
+                                    <section className={`calender__hiden calender__hiden--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>
+                                        <p className={`calender__hidenText calender__hidenText--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non eos amet aperiam accusantium quia delectus voluptatem voluptatum perferendis deleniti saepe eaque, laborum minus, pariatur placeat quidem dolorum voluptate quas!
+                                        </p>
+                                        <a href="" className={`calender__link calender__link--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>Schrijf je in</a>
+                                    </section>
+                                    <button className="calender__toggle" onClick={() => showHiddenText(activityKey)}>
+                                        {hiddenTextVisibility[activityKey] ?
+                                            (
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                                                </svg>
+                                            ) : (
+
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
+                                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                                                </svg>
+                                            )
+                                        }
+                                    </button>
+                                </section>
+                            </li>
+                        );
+                    })
                 ) : (
                     <li className="calender__activity">
                         <div></div>

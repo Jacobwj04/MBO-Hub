@@ -1,29 +1,31 @@
 @use '../../abstracts/colors';
 @use "sass:map";
+@use "../../abstracts/mixins";
 
-.calender{
+.calender {
     max-width: 144em;
     margin-inline: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 2em;
+    margin-bottom: 5em;
 
-    h2{
+    h2 {
         font-size: 3em;
     }
 
-    &__dates{
+    &__dates {
         width: 100%;
         list-style: none;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 2em 5em;
-        gap: 2em;
+        gap: 4em;
     }
 
-    &__activity{
+    &__activity {
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -32,7 +34,7 @@
         border-left: 0.1em solid map.get(colors.$borders, "black");
     }
 
-    &__date{
+    &__date {
         position: absolute;
         width: 8em;
         aspect-ratio: 1/1;
@@ -47,14 +49,14 @@
         z-index: 1;
         background: white;
 
-        span{
+        span {
             font-size: 1.5em;
             text-align: center;
         }
     }
 
 
-    &__activities{
+    &__activities {
         width: 70%;
         border: 0.1em solid map.get(colors.$borders, "lightGray");
         padding: 2em;
@@ -62,18 +64,29 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
+        position: relative;
+        transition: height 0.3s ease-in-out;
+        height: auto;
+
+        &[data-expanded="false"] {
+            height: max-content;
+        }
+
+        &[data-expanded="true"] {
+            height: max-content;
+        }
     }
 
-    &__header{
+    &__header {
         display: flex;
         justify-content: space-between;
     }
 
-    &__title{
+    &__title {
         display: inline-block;
     }
 
-    &__label{
+    &__label {
         padding: 0.5em 2em;
         border-radius: 2em;
         background: map.get(colors.$borders, "lightGray");
@@ -84,14 +97,78 @@
         font-size: 1.3em;
     }
 
-    &__text{
+    &__text {
         color: map.get(colors.$textColor, "lightGray");
         font-size: 1.5em;
     }
 
-    &__subHeading{
+    &__subHeading {
         margin-top: 1em;
         color: map.get(colors.$textColor, "darkGray");
         font-size: 1.8em;
+    }
+
+    &__hiden {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 1em;
+        overflow: hidden;
+        transform-origin: top;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+
+        &--show {
+            max-height: max-content;
+        }
+
+        &--hidden {
+            transform: scaleY(0);
+        }
+    }
+
+    &__hidenText {
+        opacity: 0;
+        font-size: 1.5em;
+        color: map.get(colors.$textColor, "lightGray");
+        transition: opacity 0.3s ease-in-out;
+
+        &--show {
+            opacity: 1;
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
+    }
+
+    &__toggle {
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1", 1);
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+
+        svg {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__link{
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, max-content, "0/0");
+        padding: 1em 3em;
+        text-decoration: none;
+        font-size: 1.3em;
+        opacity: 0;
+
+        transition: opacity 0.3s ease-in-out;
+
+        &--show {
+            opacity: 1;
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
     }
 }
