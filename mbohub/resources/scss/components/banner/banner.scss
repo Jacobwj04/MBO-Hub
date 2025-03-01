@@ -68,7 +68,7 @@
         padding: 1em 3em;
         font-size: 1.5em;
         text-decoration: none;
-        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, auto, "0/0", 0, 0, 1)
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, auto, "0/0", 0, 0, 1);
 
     }
 }
