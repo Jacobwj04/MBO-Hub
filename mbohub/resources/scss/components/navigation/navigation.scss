@@ -25,7 +25,7 @@
 
     &__hubLogo{
         position: absolute;
-        right: 0;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
         width: 20em;
@@ -41,6 +41,7 @@
     justify-content: center;
     border-radius: 2em;
     border: none;
+    position: relative;
 
     &__link{
         background: black;
@@ -56,11 +57,22 @@
         }
 
         &:last-child{
-            border-radius: 0 2em 2em 0; 
+            border-radius: 0 2em 2em 0 !important; 
         }
 
         &:hover{
             background: #d63041;
+        }
+    }
+}
+
+@media screen and (max-width: 64rem){
+    .nav{
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0 2em;
+        &__link{
+            display: none;
         }
     }
 }
