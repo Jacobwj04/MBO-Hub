@@ -22,11 +22,13 @@ function Navigation() {
                 </figure>
             </a>
             <nav className="nav">
-                <Navlink href={route('projects.projects')}>Projects</Navlink>
-                <Navlink href={route('about.about')}>About</Navlink>
-                <Navlink href={route('partners.partners')}>Partners</Navlink>
-                <Navlink href={route('contact.contact')}>Contact</Navlink>
-                <Navlink href={route('login')}>Login</Navlink>
+                <div>
+                    <Navlink href={route('projects.projects')}>Projects</Navlink>
+                    <Navlink href={route('about.about')}>About</Navlink>
+                    <Navlink href={route('partners.partners')}>Partners</Navlink>
+                    <Navlink href={route('contact.contact')}>Contact</Navlink>
+                    <Navlink href={route('login')}>Login</Navlink>
+                </div>
 
                 {/* <div className="user-info">
                     {auth.user ? (

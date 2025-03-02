@@ -10,6 +10,7 @@
     transform: translateX(100%);
     opacity: 0;
     transition: transform 0.8s, opacity 0.8s;
+    background: map.get(colors.$backgroundColors, "white");
 
     &--hide {
         transform: translateX(100%);
