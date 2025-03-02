@@ -1,0 +1,50 @@
+@use '../../abstracts/colors';
+@use "sass:map";
+@use "../../abstracts/mixins";
+
+.menu {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 0.8s, opacity 0.8s;
+
+    &--hide {
+        transform: translateX(100%);
+        opacity: 0;
+        display: block;
+    }
+
+    &--show {
+        transform: translateX(0%);
+        opacity: 1;
+        display: block;
+    }
+
+    &__container{
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__button {
+        padding: 1em;
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 1em, 5em, "1/1");
+
+        svg {
+            width: 3em;
+            height: 3em;
+        }
+    }
+
+    &__link {
+        background: white;
+        color: map.get(colors.$textColor, "red");
+        padding: 1em;
+        font-size: 2em;
+        text-decoration: none;
+    }
+}

@@ -50,12 +50,14 @@ function Navigation() {
                         </svg>
                     )}
                 </button>
-                <section className="menu">
-                    <Navlink href={route('projects.projects')}>Projects</Navlink>
-                    <Navlink href={route('about.about')}>About</Navlink>
-                    <Navlink href={route('partners.partners')}>Partners</Navlink>
-                    <Navlink href={route('contact.contact')}>Contact</Navlink>
-                    <Navlink href={route('login')}>Login</Navlink>
+                <section className={`menu menu--${isNavOpen ? "show" : "hide"}`}>
+                    <div className="menu__container">
+                        <a className="menu__link" href={route('projects.projects')}>Projects</a>
+                        <a className="menu__link" href={route('about.about')}>About</a>
+                        <a className="menu__link" href={route('partners.partners')}>Partners</a>
+                        <a className="menu__link" href={route('contact.contact')}>Contact</a>
+                        <a className="menu__link" href={route('login')}>Login</a>
+                    </div>
                 </section>
             </nav>
         </header>

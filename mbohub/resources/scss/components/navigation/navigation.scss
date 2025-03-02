@@ -41,6 +41,7 @@
     justify-content: center;
     border-radius: 2em;
     border: none;
+    position: relative;
 
     &__link{
         background: black;
@@ -56,7 +57,7 @@
         }
 
         &:last-child{
-            border-radius: 0 2em 2em 0; 
+            border-radius: 0 2em 2em 0 !important; 
         }
 
         &:hover{
