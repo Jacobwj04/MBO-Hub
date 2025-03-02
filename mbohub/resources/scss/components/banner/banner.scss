@@ -30,6 +30,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 2em;
     }
 
     &__img{
@@ -43,6 +44,7 @@
         flex-direction: column;
         gap: 2em;
         z-index: 4;
+        width: 50%;
     }
 
     &__title{
@@ -71,5 +73,16 @@
         text-decoration: none;
         @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, auto, "0/0", 0, 0, 1);
 
+    }
+}
+
+@media screen and (max-width: 68.75rem){
+    .banner{
+        height: auto;
+        &__container{
+            flex-direction: column;
+            gap: 5em;
+            padding: 5em;
+        }
     }
 }
