@@ -71,7 +71,7 @@
         padding: 1em 3em;
         font-size: 1.5em;
         text-decoration: none;
-        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, max-content, "0/0", 0, 0, 1);
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2rem, max-content, "0/0", 0, 0, 1);
         text-align: center;
 
     }
