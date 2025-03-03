@@ -52,6 +52,7 @@ function Welcome() {
                         topLabelText="Dit is een label"
                         bottomLabelText="Dit is een label"
                         onClick={() => openModal({ title: "Project 2", text: "Dit is project 2." })}
+                        button={true}
                     />
                 </div>
             </section>

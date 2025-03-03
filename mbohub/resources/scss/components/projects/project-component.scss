@@ -115,13 +115,16 @@ $color-red: rgba(224, 51, 68, 1);
         justify-content: center;
     }
 }
+
 .modal-overlay {
-    width: 40%;
+    width: 50em;
     min-height: 40em;
     background: white;
     position: absolute;
     z-index: 2;
-    right: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 1em;
     display: flex;
     align-items: center;
@@ -145,6 +148,7 @@ $color-red: rgba(224, 51, 68, 1);
     .modal-content {
         width: 95%;
         min-height: 38em;
+        max-height: 50em;
         display: flex;
         flex-direction: column;
 
@@ -179,6 +183,7 @@ $color-red: rgba(224, 51, 68, 1);
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+            overflow-y: auto;
 
             .modal-p {
                 font-size: 1.5em;
@@ -204,3 +209,90 @@ $color-red: rgba(224, 51, 68, 1);
         }
     }
 }
+
+
+@media screen and (max-width:550px) and ( max-height: 550px) { 
+    .modal-overlay {
+        max-width: 35em;
+        height: 30em;
+    }
+
+    .modal-overlay .modal-content .modal-content-img {
+        height: 36%;
+        margin-bottom: 1em;
+    }
+
+    .modal-overlay .modal-content .modal-content-img .modal-img {
+        height: 100%;
+    }
+
+    .modal-overlay .modal-content .modal-content-bottom {
+        height: 47%;
+    }
+}
+
+@media screen and ( max-height: 550px) { 
+    .modal-overlay {
+        max-width: 45em;
+        height: 30em;
+    }
+
+    .modal-overlay .modal-content .modal-content-img {
+        height: 45%;
+    }
+
+    .modal-overlay .modal-content .modal-content-bottom {
+        height: 37%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .project-component {
+        z-index: 1;
+        width: 35em;
+    }
+    .project-component .image-container .square-image {
+        width: 35em;
+    }
+
+    .project-component .project-content .project-date {
+        font-size: 1.2em;
+    }
+
+    .project-component .project-content .project-h2 {
+        margin-top: 0.5em;
+        font-size: 1.7em;
+    }
+
+    .project-component .project-content .project-read {
+        display: block;
+        margin-top: 1em;
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .project-component {
+        z-index: 1;
+        width: 30em;
+    }
+    .project-component .image-container .square-image {
+        width: 30em;
+    }
+
+    .project-component .project-content .project-date {
+        font-size: 1.2em;
+    }
+
+    .project-component .project-content .project-h2 {
+        margin-top: 0.5em;
+        font-size: 1.7em;
+    }
+
+    .project-component .project-content .project-read {
+        display: block;
+        margin-top: 1em;
+        font-size: 1.2em;
+    }
+}
+
