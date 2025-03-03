@@ -2,7 +2,7 @@ import React from "react";
 
 export default function InfoCard() {
     return(
-        <ul className="card__container">
+        <ul className="card">
             <li className="card__card">
                 <a href="" className="card__link">
                     <h3 className="card__title">MBO-Hub Team & Partners</h3>

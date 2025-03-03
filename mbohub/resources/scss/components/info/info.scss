@@ -1,6 +1,23 @@
+@use '../../abstracts/colors';
+@use "sass:map";
+@use "../../abstracts/mixins";
+
 .info{
     max-width: 144rem;
     height: auto;
-    margin: 0 auto;
-    
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    &__title{
+        font-size: 3em;
+        color: map.get(colors.$textColor, "red");
+    }
+
+    &__paragraph{
+        font-size: 1.5em;
+        color: map.get(colors.$textColor, "darkGray");
+    }
 }

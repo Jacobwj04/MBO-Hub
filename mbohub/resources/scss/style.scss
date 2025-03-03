@@ -9,6 +9,10 @@
 @use "./components/banner/banner.scss";
 @use "./components/slider/slider.scss";
 
+// Info section
+@use "./components/info/info.scss";
+@use "./components/info/card.scss";
+
 // Calender
 @use './components/calender/calender.scss';
 @use "./components/calender/date.scss";
