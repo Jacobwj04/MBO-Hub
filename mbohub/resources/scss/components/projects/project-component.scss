@@ -2,17 +2,9 @@ $color-purple: rgb(94 50 137);
 $border-radius: 1em;
 $color-red: rgba(224, 51, 68, 1);
 
-// .dark-background {
-//     background: rgba(0, 0, 0, .8);
-//     transition: background-color 0.3s ease-in-out;
-//     z-index: 50;
-//     width: 100vw;
-//     height: 100vh;
-// }
-
 .project-component {
     z-index: 1;
-    width: 26vw;
+    width: 40em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,7 +37,7 @@ $color-red: rgba(224, 51, 68, 1);
         }
 
         .square-image {
-            width: 100%;
+            width: 40em;
             height: 100%;
             object-fit: cover;
             border-top-left-radius: $border-radius;
