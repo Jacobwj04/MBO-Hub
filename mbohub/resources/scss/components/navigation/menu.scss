@@ -3,25 +3,46 @@
 @use "../../abstracts/mixins";
 
 .menu {
+    display: none;
     position: absolute;
     width: 100%;
     top: 100%;
     left: 0;
     transform: translateX(100%);
-    opacity: 0;
-    transition: transform 0.8s, opacity 0.8s;
     background: map.get(colors.$backgroundColors, "white");
 
-    &--hide {
-        transform: translateX(100%);
-        opacity: 0;
+    &--hide{
+        animation: 0.8s forwards mobileMenuClose;
         display: block;
     }
 
-    &--show {
-        transform: translateX(0%);
-        opacity: 1;
+    &--show{
+        animation: 0.8s forwards mobileMenuOpen;
         display: block;
+    }
+
+    @keyframes mobileMenuClose{
+        0%{
+            transform: translateX(0%);
+            display: block;
+        }
+    
+        100%{
+            transform: translateX(100%);
+            display: none;
+        }
+    }
+    
+    @keyframes mobileMenuOpen{
+        0%{
+            transform: translateX(100%);
+            display: block;
+        }
+    
+        100%{
+            transform: translateX(0%);
+            display: block;
+        }
     }
 
     &__container{
@@ -33,19 +54,19 @@
 
     &__button {
         display: none;
-        padding: 1em;
-        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 1em, 5em, "1/1");
+        padding: 0.5rem;
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 1rem, 4rem, "1/1");
 
         svg {
-            width: 3em;
-            height: 3em;
+            width: 2em;
+            height: 2em;
         }
     }
 
     &__link {
         background: white;
         color: map.get(colors.$textColor, "red");
-        padding: 1em;
+        padding: 1rem;
         font-size: 2em;
         text-decoration: none;
     }
