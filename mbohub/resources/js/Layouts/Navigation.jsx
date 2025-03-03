@@ -5,9 +5,18 @@ import React, { useState } from 'react';
 function Navigation() {
     const { auth } = usePage().props;
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const [menuClass, setMenuClass] = useState("");
+
+    let navClass = "";
 
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
+
+        if(isNavOpen){
+            setMenuClass("menu--hide");
+        }else{
+            setMenuClass("menu--show");
+        }
     };
 
     return (
@@ -52,7 +61,7 @@ function Navigation() {
                         </svg>
                     )}
                 </button>
-                <section className={`menu menu--${isNavOpen ? "show" : "hide"}`}>
+                <section className={`menu ${menuClass}`}>
                     <div className="menu__container">
                         <a className="menu__link" href={route('projects.projects')}>Projects</a>
                         <a className="menu__link" href={route('about.about')}>About</a>
