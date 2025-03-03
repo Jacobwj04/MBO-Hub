@@ -12,7 +12,6 @@ export default function Calender() {
     });
 
     const handleMonthYearChange = (monthYear) => {
-        console.log("MonthYear changed to:", monthYear);
         setSelectedMonthYear(monthYear);
     };
 
@@ -69,7 +68,6 @@ export default function Calender() {
                 activityYear === selectedMonthYear.year
             );
 
-            console.log(`Activity: ${activity.title}, Date: ${activity.date}, Parsed Month: ${activityMonthIndex}, Parsed Year: ${activityYear}, Selected Month: ${selectedMonthYear.month}, Selected Year: ${selectedMonthYear.year}, Match: ${isMatch}`);
 
             return isMatch;
         } catch (error) {
@@ -85,7 +83,7 @@ export default function Calender() {
             <ul className="calender__dates">
                 {filteredActivities.length > 0 ? (
                     filteredActivities.map((activity, index) => {
-                        const activityKey = `${activity.title}-${activity.date}`; // Unique identifier
+                        const activityKey = `${activity.title}-${activity.date}`;
                         return (
                             <li className="calender__activity" key={activityKey}>
                                 <figure className="calender__date">
