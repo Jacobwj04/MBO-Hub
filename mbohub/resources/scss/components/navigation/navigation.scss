@@ -8,6 +8,11 @@
     box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
     z-index: 2;
 
+    &__link{
+        width: max-content;
+        height: max-content;
+    }
+
     &__figure{
         position: absolute;
         left: 0;

@@ -7,8 +7,6 @@ function Navigation() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [menuClass, setMenuClass] = useState("");
 
-    let navClass = "";
-
     const handleNavToggle = () => {
         setIsNavOpen(!isNavOpen);
 
@@ -21,7 +19,7 @@ function Navigation() {
 
     return (
         <header className="header">
-            <a href="#">
+            <a className="header__link" href="#">
                 <figure className="header__hubLogo">
                     <img
                         src="/img/MBO-Hub-logo.webp"
