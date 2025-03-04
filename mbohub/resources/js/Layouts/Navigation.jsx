@@ -19,7 +19,7 @@ function Navigation() {
 
     return (
         <header className="header">
-            <a className="header__link" href="#">
+            <a className="header__link" href="/">
                 <figure className="header__hubLogo">
                     <img
                         src="/img/MBO-Hub-logo.webp"
@@ -32,6 +32,7 @@ function Navigation() {
                 <div>
                     <Navlink href={route('projects.projects')}>Projects</Navlink>
                     <Navlink href={route('about.about')}>About</Navlink>
+                    <Navlink href={route('calender.calender')}>Calender</Navlink>
                     <Navlink href={route('partners.partners')}>Partners</Navlink>
                     <Navlink href={route('contact.contact')}>Contact</Navlink>
                     <Navlink href={route('login')}>Login</Navlink>
@@ -63,6 +64,7 @@ function Navigation() {
                     <div className="menu__container">
                         <a className="menu__link" href={route('projects.projects')}>Projects</a>
                         <a className="menu__link" href={route('about.about')}>About</a>
+                        <a className="menu__link" href={route('calender.calender')}>Calender</a>
                         <a className="menu__link" href={route('partners.partners')}>Partners</a>
                         <a className="menu__link" href={route('contact.contact')}>Contact</a>
                         <a className="menu__link" href={route('login')}>Login</a>
