@@ -28,6 +28,4 @@ function Projects() {
         </AuthenticatedLayout>
     );
 }
-
-import '../css/Projects.css';
 export default Projects;
