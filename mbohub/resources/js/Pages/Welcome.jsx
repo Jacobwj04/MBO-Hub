@@ -1,7 +1,6 @@
 import { useState } from "react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { Project, Modal } from "../Components/project-component";
-import Project from "../Components/project-component";
 import FooterComponent from "./Contact/footer";
 import { Banner } from "@/Layouts/banner";
 import Calender from "@/Components/calender/calender";
