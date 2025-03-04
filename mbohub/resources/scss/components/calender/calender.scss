@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 2em;
     margin-bottom: 5em;
 
     h2 {
@@ -22,7 +21,14 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 2em 5em;
-        gap: 4em;
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 4rem;
     }
 
     &__activity {
@@ -45,12 +51,13 @@
         justify-content: center;
         top: 0;
         left: 0;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0%);
         z-index: 1;
         background: white;
+        padding: 0.5rem;
 
         span {
-            font-size: 1.5em;
+            font-size: 1.3em;
             text-align: center;
         }
     }
