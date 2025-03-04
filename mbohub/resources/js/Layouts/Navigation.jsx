@@ -30,9 +30,9 @@ function Navigation() {
             </a>
             <nav className="nav">
                 <div>
-                    <Navlink href={route('projects.projects')}>Projects</Navlink>
-                    <Navlink href={route('about.about')}>About</Navlink>
-                    <Navlink href={route('calender.calender')}>Calender</Navlink>
+                    <Navlink href={route('projects.projects')}>Projecten</Navlink>
+                    <Navlink href={route('about.about')}>Over ons</Navlink>
+                    <Navlink href={route('calender.calender')}>Kalender</Navlink>
                     <Navlink href={route('partners.partners')}>Partners</Navlink>
                     <Navlink href={route('contact.contact')}>Contact</Navlink>
                     <Navlink href={route('login')}>Login</Navlink>
