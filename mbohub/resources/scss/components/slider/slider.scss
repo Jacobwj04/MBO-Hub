@@ -1,0 +1,26 @@
+@use "../../abstracts/mixins";
+@use '../../abstracts/colors';
+@use "sass:map";
+
+
+.slider{
+    width: 50%;
+    height: 80%;
+    z-index: 4;
+    position: relative;
+
+    &__figure{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__button{
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1", 1, 1);
+    }
+}

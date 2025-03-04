@@ -1,3 +1,7 @@
+@use "../../abstracts/mixins";
+@use '../../abstracts/colors';
+@use "sass:map";
+
 .banner{
     width: 100%;
     height: 75vh;
@@ -12,7 +16,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: #0b353c84;
+        background: map.get(colors.$backgroundColors, "purple");
         width: 100vw;
         height: 100%;
     }
@@ -22,6 +26,9 @@
         margin-inline: auto;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__img{
@@ -31,24 +38,21 @@
     }
 
     &__text{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
         gap: 2em;
+        z-index: 4;
     }
 
     &__title{
         font-size: 4em;
-        color: white;
+        color: map.get(colors.$textColor, "white");
         text-align: center;
     }
 
     &__subTitle{
         font-size: 2.5em;
-        color: white;
+        color: map.get(colors.$textColor, "white");
         text-align: center;
     }
 
@@ -62,30 +66,9 @@
     &__button{
         margin-top: 2em;
         padding: 1em 3em;
-        border: none;
         font-size: 1.5em;
-        border-radius: 2em;
         text-decoration: none;
-        transition: 0.2s all;
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, auto, "0/0", 0, 0, 1)
 
-        &:first-child{
-            background: #d63041;
-            color: white;
-            border: 0.1em solid #d63041;
-
-            &:hover{
-                background: darken(#d63041, 10%);
-                border: 0.1em solid darken(#d63041, 10%);
-            }
-        }
-
-        &:last-child{
-            background: white;
-            color: #d63041;
-
-            &:hover{
-                background: darken(white, 10%);
-            }
-        }
     }
 }

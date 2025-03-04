@@ -45,5 +45,4 @@ function Edit() {
     );
 }
 
-import '../css/Form.css';
 export default Edit;
