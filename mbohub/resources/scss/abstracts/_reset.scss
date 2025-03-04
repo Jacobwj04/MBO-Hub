@@ -11,8 +11,11 @@ html{
 
 body{
     margin: 0 !important;
+    overflow-x: hidden !important;
 }
 
 main{
     margin-inline: auto;
+    position: relative;
+    z-index: 0;
 }
