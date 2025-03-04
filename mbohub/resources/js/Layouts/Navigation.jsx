@@ -31,7 +31,7 @@ function Navigation() {
             <nav className="nav">
                 <div>
                     <Navlink href={route('projects.projects')}>Projecten</Navlink>
-                    <Navlink href={route('about.about')}>Over ons</Navlink>
+                    <Navlink href={route('about.about')}>About</Navlink>
                     <Navlink href={route('calender.calender')}>Kalender</Navlink>
                     <Navlink href={route('partners.partners')}>Partners</Navlink>
                     <Navlink href={route('contact.contact')}>Contact</Navlink>

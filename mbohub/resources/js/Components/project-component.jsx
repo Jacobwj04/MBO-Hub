@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function Project({ title, text, topLabelText, bottomLabelText, date, readMore, circle, textcentered, button }) {
+export default function Project({ title, text, topLabelText, bottomLabelText, date, readMore, circle, textcentered, button }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
