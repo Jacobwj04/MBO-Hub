@@ -56,3 +56,7 @@
         background: color.adjust($backgroundcolor, $lightness: -10%);
     }
 }
+
+@mixin border($thikness: 0.1rem, $color: "lightGray", $type: solid,){
+    border: $thikness $type map.get(colors.$borders, $color);
+}
