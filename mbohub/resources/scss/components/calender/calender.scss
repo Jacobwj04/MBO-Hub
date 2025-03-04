@@ -3,12 +3,14 @@
 @use "../../abstracts/mixins";
 
 .calender {
+    position: relative;
     max-width: 144em;
     margin-inline: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 5em;
+    z-index: -1;
 
     h2 {
         font-size: 3em;
