@@ -1,7 +1,7 @@
 $color: rgb(94 50 137);
 $border-radius: 1em;
 $border-color: rgb(0 0 0 / .05);
-$padding-article: 2gitem;
+$padding-article: 2em;
 $font-size: 2em;
 $font-summary: 1.5em;
 $right-bottom: .5em;
@@ -110,7 +110,7 @@ $right-bottom: .5em;
                     
                     .right-info {
                         text-decoration: none;
-                        font-size: $font-size;
+                        font-size: 1.5em;
                     }
                 }
             }
@@ -141,6 +141,21 @@ $right-bottom: .5em;
                     .right-follow-link {
                         text-decoration: none;
                         font-size: $font-size;
+
+                        .contact-linkedin {
+                            color: black;
+                            &:hover {
+                                color: $color;
+                            }
+                        } 
+
+                        .contact-instagram {
+                            color: black;
+
+                            &:hover {
+                                color: $color;
+                            }
+                        } 
                     }
                 }
             }
@@ -182,7 +197,7 @@ $right-bottom: .5em;
     }
 
     .contact .contact-summary {
-        font-size: 2em;
+        font-size: 1.5em;
         margin-bottom: 2em;
     }
 
