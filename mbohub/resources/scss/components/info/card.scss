@@ -9,12 +9,18 @@
     justify-content: center;
     gap: 5rem;
     list-style: none;
+    flex-wrap: wrap;
 
     &__card{
         @include mixins.border(0.1rem, "lightGray");
         width: calc(100% / 5);
         height: 25rem;
         border-radius: 1rem;
+
+        &:hover {
+            box-shadow: 0em .5em 2em rgba(0, 0, 0, .1);
+            cursor: pointer;
+        }
     }
 
     &__link{
@@ -35,5 +41,21 @@
     &__paragraph{
         font-size: 1.5em;
         color: map.get(colors.$textColor, "darkGray");
+    }
+}
+
+@media screen and (max-width: 62.5rem){
+    .card{
+        &__card{
+            width: calc(100% / 2 - 5rem); 
+        }
+    }
+}
+
+@media screen and (max-width: 37.5rem){
+    .card{
+        &__card{
+            width: 100%; 
+        }
     }
 }
