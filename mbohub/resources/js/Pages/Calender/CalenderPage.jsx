@@ -1,7 +1,10 @@
 import React from "react";
+import Navigation from "@/Layouts/Navigation";
 
 export default function CalenderPage() {
     return(
-        <h1>hoi</h1>
+        <>
+        <Navigation />
+        </>
     )
 }
