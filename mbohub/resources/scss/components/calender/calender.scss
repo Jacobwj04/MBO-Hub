@@ -102,6 +102,8 @@
         justify-content: center;
         color: map.get(colors.$textColor, "purple");
         font-size: 1.3em;
+        height: max-content;
+        width: max-content;
     }
 
     &__text {
@@ -180,3 +182,48 @@
         }
     }
 }
+
+@media screen and (max-width: 64rem){
+    .calender{
+        &__container{
+            gap: 12rem;
+            justify-content: start;
+        }
+
+        &__activities{
+            margin: 0 2rem 0 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 50rem){
+    .calender{
+
+        &__header{
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+
+        &__dates{
+            padding: 2rem;
+        }
+
+        &__activities{
+            margin: 0;
+        }
+
+        &__activity{
+            border: none;
+        }
+
+        &__container{
+            gap: 0rem;
+        }
+
+        &__date{
+            display: none;
+        }
+        
+    }
+}   
