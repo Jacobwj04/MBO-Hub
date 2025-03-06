@@ -145,15 +145,13 @@ export default function Calender({ isHomePage }) {
                         );
                     })
                 ) : (
-                    <li className="calender__activity">
+                    <li className="calender__activity calender__activity--empty">
                         <div></div>
-                        <section className="calender__activities">
+                        <section className="calender__activities calender__activities--empty">
                             <div className="calender__header">
                                 <h2 className="calender__title">Geen activiteit op dit moment</h2>
-                                <span className="calender__label"></span>
                             </div>
                             <p className="calender__text"></p>
-                            <p className="calender__text">Locatie:</p>
                             <h3 className="calender__subHeading"></h3>
                         </section>
                     </li>
