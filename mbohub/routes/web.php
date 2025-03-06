@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\NieuwsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectsController;
-use App\Http\Controllers\SkillsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -34,13 +33,13 @@ Route::middleware('auth')->group(function ()
 
 Route::get('/about', [AboutController::class, 'about'])->name('about.about');
 
-Route::get('/skills', [SkillsController::class, 'skills'])->name('skills.skills');
-
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.contact');
 
 Route::resources([
 	'/projects' => ProjectsController::class
 ]);
+
+Route::get('/calender', [CalenderController::class, 'calender'])->name('calender.calender');
 
 require __DIR__ . '/auth.php';
 

@@ -4,7 +4,7 @@ export default function GuestLayout({children, hideNavigation = true}){
     return(
 
         <>
-            {!hideNavigation && <Navigation showBigImage={true} />}
+            {!hideNavigation && <Navigation />}
             <main className="main">{children}</main>
         </>
     )

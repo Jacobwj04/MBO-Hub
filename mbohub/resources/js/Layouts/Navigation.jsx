@@ -1,26 +1,42 @@
-import { router, usePage } from '@inertiajs/react';
+import { usePage } from '@inertiajs/react';
 import Navlink from '../Components/NavLink';
+import React, { useState } from 'react';
 
-function Navigation({ showBigImage }) {
+function Navigation() {
     const { auth } = usePage().props;
+    const [isNavOpen, setIsNavOpen] = useState(false);
+    const [menuClass, setMenuClass] = useState("");
+
+    const handleNavToggle = () => {
+        setIsNavOpen(!isNavOpen);
+
+        if(isNavOpen){
+            setMenuClass("menu--hide");
+        }else{
+            setMenuClass("menu--show");
+        }
+    };
 
     return (
         <header className="header">
-            { showBigImage &&  (
-                <figure className="header__figure">
+            <a className="header__link" href="/">
+                <figure className="header__hubLogo">
                     <img
-                        src="/img/750slinger.png"
+                        src="/img/MBO-Hub-logo.webp"
                         alt="Logo"
                         className="header__logo"
                     />
                 </figure>
-            )}
+            </a>
             <nav className="nav">
-                <Navlink href={route('projects.index')}>Projects</Navlink>
-                <Navlink href={route('about.about')}>About</Navlink>
-                <Navlink href={route('skills.skills')}>Skills</Navlink>
-                <Navlink href={route('contact.contact')}>Contact</Navlink>
-                <Navlink href={route('login')}>Login</Navlink>
+                <div>
+                    <Navlink href={route('projects.index')}>Projecten</Navlink>
+                    <Navlink href={route('about.about')}>About</Navlink>
+                    <Navlink href={route('calender.calender')}>Kalender</Navlink>
+                    <Navlink href={route('partners.partners')}>Partners</Navlink>
+                    <Navlink href={route('contact.contact')}>Contact</Navlink>
+                    <Navlink href={route('login')}>Login</Navlink>
+                </div>
 
                 {/* <div className="user-info">
                     {auth.user ? (
@@ -33,14 +49,28 @@ function Navigation({ showBigImage }) {
                         <span className="guest-name">Guest</span>
                     )}
                 </div> */}
+                <button className="menu__button" onClick={handleNavToggle}>
+                    {isNavOpen ? (
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    )}
+                </button>
+                <section className={`menu ${menuClass}`}>
+                    <div className="menu__container">
+                        <a className="menu__link" href={route('projects.projects')}>Projects</a>
+                        <a className="menu__link" href={route('about.about')}>About</a>
+                        <a className="menu__link" href={route('calender.calender')}>Calender</a>
+                        <a className="menu__link" href={route('partners.partners')}>Partners</a>
+                        <a className="menu__link" href={route('contact.contact')}>Contact</a>
+                        <a className="menu__link" href={route('login')}>Login</a>
+                    </div>
+                </section>
             </nav>
-            <figure className="header__hubLogo">
-                <img
-                    src="/img/MBO-Hub-logo.webp"
-                    alt="Logo"
-                    className="header__logo"
-                />
-            </figure>
         </header>
     );
 }
