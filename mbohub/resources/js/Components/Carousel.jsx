@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 const images = [
     { placeholder: "https://placehold.co/600x400", link: "https://example.com/image1" },
-    { placeholder: "https://placehold.co/550x400", link: "https://example.com/image2" },
-    { placeholder: "https://placehold.co/500x400", link: "https://example.com/image3" },
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image2" },
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image3" },
     { placeholder: "https://placehold.co/600x400", link: "https://example.com/image4" },
-    { placeholder: "https://placehold.co/550x400", link: "https://example.com/image5" },
-    { placeholder: "https://placehold.co/500x400", link: "https://example.com/image6" },
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image5" },
+    { placeholder: "https://placehold.co/600x400", link: "https://example.com/image6" },
 ];
 
 function MultiCarousel() {
