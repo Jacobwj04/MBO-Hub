@@ -33,22 +33,9 @@ function Navigation() {
                     <Navlink href={route('projects.projects')}>Projecten</Navlink>
                     <Navlink href={route('about.about')}>About</Navlink>
                     <Navlink href={route('calender.calender')}>Kalender</Navlink>
-                    <Navlink href={route('partners.partners')}>Partners</Navlink>
                     <Navlink href={route('contact.contact')}>Contact</Navlink>
                     <Navlink href={route('login')}>Login</Navlink>
                 </div>
-
-                {/* <div className="user-info">
-                    {auth.user ? (
-                        <div className="login-user">
-                            <div>Welkom</div>
-                            <span className="user-name">{auth.user.name}!</span>
-                        </div>
-                    ) : (
-
-                        <span className="guest-name">Guest</span>
-                    )}
-                </div> */}
                 <button className="menu__button" onClick={handleNavToggle}>
                     {isNavOpen ? (
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
@@ -65,7 +52,6 @@ function Navigation() {
                         <a className="menu__link" href={route('projects.projects')}>Projects</a>
                         <a className="menu__link" href={route('about.about')}>About</a>
                         <a className="menu__link" href={route('calender.calender')}>Calender</a>
-                        <a className="menu__link" href={route('partners.partners')}>Partners</a>
                         <a className="menu__link" href={route('contact.contact')}>Contact</a>
                         <a className="menu__link" href={route('login')}>Login</a>
                     </div>
