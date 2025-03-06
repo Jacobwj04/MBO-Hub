@@ -1,6 +1,5 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { usePage } from "@inertiajs/react";
-import { Project } from "@/Components/project-component.jsx";
 import React from "react";
 import FooterComponent from "../Contact/footer.jsx";
 import MultiCarousel from "@/Components/Carousel.jsx";
