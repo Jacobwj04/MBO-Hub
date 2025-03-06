@@ -6,11 +6,10 @@ export default function AuthenticatedLayout({ children }) {
     const user = usePage().props.auth.user;
     return (
         <>
-            <Navigation />
             { user &&
-                <>
-                    <div className="auth">{ children }</div>
-                </>
+                <div className="auth">
+                    { children }
+                </div>
             }
         </>
     );

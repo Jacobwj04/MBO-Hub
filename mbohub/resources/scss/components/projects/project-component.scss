@@ -2,6 +2,11 @@ $color-purple: rgb(94 50 137);
 $border-radius: 1em;
 $color-red: rgba(224, 51, 68, 1);
 
+@use '../../abstracts/colors';
+@use "sass:map";
+@use "sass:color";
+@use "../../abstracts/mixins";
+
 .project-component {
     z-index: 1;
     width: 40em;
@@ -23,6 +28,22 @@ $color-red: rgba(224, 51, 68, 1);
         flex-direction: column;
         position: relative;
         z-index: 1;
+
+        .editButton{
+            all: unset;
+            @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, "auto", "1");
+            position: absolute;
+            left: 0;
+            margin-inline-start: 1em;
+            margin-block-start: 1em;
+            height: 3em;
+            width: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
 
         .project-top-label {
             position: absolute;
@@ -162,7 +183,7 @@ $color-red: rgba(224, 51, 68, 1);
             }
 
             .modal-date {
-                font-size: 1.5em;            
+                font-size: 1.5em;
             }
         }
 
@@ -211,7 +232,7 @@ $color-red: rgba(224, 51, 68, 1);
 }
 
 
-@media screen and (max-width:550px) and ( max-height: 550px) { 
+@media screen and (max-width:550px) and ( max-height: 550px) {
     .modal-overlay {
         max-width: 35em;
         height: 30em;
@@ -231,7 +252,7 @@ $color-red: rgba(224, 51, 68, 1);
     }
 }
 
-@media screen and ( max-height: 550px) { 
+@media screen and ( max-height: 550px) {
     .modal-overlay {
         max-width: 45em;
         height: 30em;

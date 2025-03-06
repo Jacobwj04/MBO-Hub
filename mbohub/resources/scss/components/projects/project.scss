@@ -5,13 +5,30 @@
 
 .projects {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     padding: 2em 0;
     position: relative;
+
+    .projects-h1 {
+        font-size: 3em;
+    }
+
+    .project-container {
+        width: 100vw;
+        padding: 6em 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        flex-wrap: wrap;
+    }
+
+    &__page{
+        margin-block-start: 10em
+    }
 
 }
 
@@ -30,3 +47,4 @@
         font-size: 1.5em;
     }
 }
+
