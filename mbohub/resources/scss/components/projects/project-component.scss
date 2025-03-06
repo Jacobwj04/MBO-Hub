@@ -1,13 +1,9 @@
 @use '../../abstracts/colors';
 @use "sass:map";
+@use "sass:color";
 @use "../../abstracts/mixins";
 
 $border-radius: 1em;
-
-@use '../../abstracts/colors';
-@use "sass:map";
-@use "sass:color";
-@use "../../abstracts/mixins";
 
 .project-component {
     z-index: 1;
