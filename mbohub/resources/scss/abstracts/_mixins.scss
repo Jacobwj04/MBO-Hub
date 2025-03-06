@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "sass:color";
+@use "./colors";
+
+@mixin button($backgroundcolor, $textColor, $roundness, $width: 5em, $aspectRatio: "1/1", $absolute: 0, $sliderButton: 0, $differntColors: 0, $secondBackgroundColor: map.get(colors.$backgroundColors, "white")){
+    position: relative;
+    border: none;
+    width: $width;
+    @if $aspectRatio == "1/1"{
+        aspect-ratio: 1/1;
+    }
+    background: $backgroundcolor;
+    border-radius: $roundness;
+    color: $textColor;
+
+    svg{
+        color: $textColor;
+    }
+
+    span{
+        font-size: 3em;
+        line-height: 30%;
+    }
+
+    @if $absolute != 0{
+        position: absolute !important;
+    }
+
+    @if $sliderButton != 0{
+        &--next{
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--prev{
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        } 
+    }
+
+    @if $differntColors != 0{
+        &:last-child{
+            background: $secondBackgroundColor;
+            color: #d63041;
+
+            &:hover{
+                background: color.adjust($secondBackgroundColor, $lightness: -10%) !important;
+            }
+        }
+    }
+
+    &:hover{
+        cursor: pointer;
+        background: color.adjust($backgroundcolor, $lightness: -10%);
+    }
+}
+
+@mixin border($thikness: 0.1rem, $color: "lightGray", $type: solid,){
+    border: $thikness $type map.get(colors.$borders, $color);
+}

@@ -1,0 +1,83 @@
+.header{
+    width: 100%;
+    height: 10em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+    &__link{
+        width: max-content;
+        height: max-content;
+    }
+
+    &__figure{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50em;
+        height: auto;
+        z-index: 2;
+    }
+
+    &__logo{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__hubLogo{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20em;
+        height: auto;
+    }
+}
+
+.nav{
+    width: max-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+    border: none;
+    position: relative;
+
+    &__link{
+        background: black;
+        border: none;
+        padding: 1em 2em;
+        color: white;
+        font-size: 1.5em;
+        text-decoration: none;
+        transition: 0.2s all;
+
+        &:first-child{
+            border-radius: 2em 0 0 2em; 
+        }
+
+        &:last-child{
+            border-radius: 0 2em 2em 0 !important; 
+        }
+
+        &:hover{
+            background: #d63041;
+        }
+    }
+}
+
+@media screen and (max-width: 64rem){
+    .nav{
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0 2em;
+        &__link{
+            display: none;
+        }
+    }
+}

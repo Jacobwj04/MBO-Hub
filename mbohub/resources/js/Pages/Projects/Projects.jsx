@@ -24,11 +24,8 @@ function Projects() {
                 <div className="projects__list">
                     {dataSets}
                 </div>
-
             </section>
         </AuthenticatedLayout>
     );
 }
-
-import '../css/Projects.css';
 export default Projects;

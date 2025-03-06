@@ -1,0 +1,29 @@
+// Abstracts
+@use "./abstracts/reset";
+
+// Navigation
+@use "./components/navigation/navigation.scss";
+@use "./components/navigation/menu.scss";
+
+// Banner
+@use "./components/banner/banner.scss";
+@use "./components/slider/slider.scss";
+
+// Info section
+@use "./components/info/info.scss";
+@use "./components/info/card.scss";
+
+// Calender
+@use './components/calender/calender.scss';
+@use "./components/calender/date.scss";
+
+// Projects
+@use "./components/projects/project-component.scss";
+@use "./components/projects/project.scss";
+
+// Footer
+@use "./components/footer/footer.scss";
+
+// About us
+@use "./components/about-us/aboutUs.scss";
+@use "./components/carousel/carousel.scss";

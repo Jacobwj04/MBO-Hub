@@ -10,6 +10,10 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     *
+     * console:
+     * php artisan db:seed
+     *
      */
     public function run(): void
     {
@@ -18,6 +22,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => 'Hello123!'
         ]);
     }
 }

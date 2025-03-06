@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NieuwsController;
 use App\Http\Controllers\PartnersController;
@@ -42,6 +43,8 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact.con
 
 Route::get('/project', [ProjectsController::class, 'projects'])->name('projects.projects');
 Route::get('/project/{project}', [ProjectsController::class, 'project'])->name('projects.project');
+Route::get('/calender', [CalenderController::class, 'calender'])->name('calender.calender');
+
 
 
 require __DIR__ . '/auth.php';
