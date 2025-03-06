@@ -1,15 +1,15 @@
-import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { usePage } from "@inertiajs/react";
-import Project from "../../Components/project-component.jsx";
+import React from "react";
 import FooterComponent from "../Contact/footer.jsx";
 import MultiCarousel from "@/Components/Carousel.jsx";
+import GuestLayout from "@/Layouts/GuestLayout";
+import Project from "../../Components/project-component.jsx";
 
 
 function About() {
     
     return (
 
-        <AuthenticatedLayout>
+        <GuestLayout>
             <section className="about-us-amsterdam750">
                 <figure className="about-us-figure">
                     <img src="/img/750slinger.png" alt="Logo" className="about-us-slinger"/>
@@ -40,7 +40,7 @@ function About() {
             </section>
 
             <FooterComponent />
-        </AuthenticatedLayout>
+        </GuestLayout>
     );
 }
 

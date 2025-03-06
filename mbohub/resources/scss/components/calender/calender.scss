@@ -12,6 +12,10 @@
     margin-bottom: 5em;
     z-index: -1;
 
+    &__main{
+        margin-top: 5rem;
+    }
+
     h2 {
         font-size: 3em;
     }
@@ -39,14 +43,16 @@
         justify-content: space-between;
         width: 100%;
         height: max-content;
-        border-left: 0.1em solid map.get(colors.$borders, "black");
+        border-left: 0.2rem solid map.get(colors.$borders, "red");
     }
 
     &__date {
         position: absolute;
         width: 8em;
         aspect-ratio: 1/1;
-        border: 0.1em solid map.get(colors.$borders, "black");
+        @include mixins.border(0.2rem, "red");
+        background: map.get(colors.$backgroundColors, "red");
+        color: map.get(colors.$textColor, "white");
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -55,7 +61,6 @@
         left: 0;
         transform: translate(-50%, 0%);
         z-index: 1;
-        background: white;
         padding: 0.5rem;
 
         span {
@@ -159,10 +164,12 @@
         top: 100%;
         transform: translate(-50%, -50%);
         display: flex;
+        align-items: center;
+        justify-content: center;
 
         svg {
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
         }
     }
 
@@ -182,6 +189,14 @@
         &--hidden {
             opacity: 0;
         }
+    }
+
+    &__showMore{
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, max-content, "0/0");
+        padding: 1rem 2rem;
+        font-size: 2em;
+        text-decoration: none;
+        margin: 5rem auto;
     }
 }
 

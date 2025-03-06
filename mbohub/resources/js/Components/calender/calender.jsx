@@ -3,7 +3,7 @@ import { MonthYearSlider } from "./monthpicker";
 import { parse, getMonth, getYear } from 'date-fns';
 import { nl } from 'date-fns/locale';
 
-export default function Calender() {
+export default function Calender({ isHomePage }) {
     const [hiddenTextVisibility, setHiddenTextVisibility] = useState({}); // Track visibility per activity
 
     const [selectedMonthYear, setSelectedMonthYear] = useState({
@@ -63,6 +63,14 @@ export default function Calender() {
             location: "Some Place",
             subHeading: "March event",
         },
+        {
+            date: "16 maart 2025",
+            title: "Maart Workshop",
+            label: "training",
+            text: "Zaterdag 16 maart 2025",
+            location: "Some Place",
+            subHeading: "March event",
+        },
     ];
 
     const filteredActivities = activities.filter((activity) => {
@@ -76,7 +84,6 @@ export default function Calender() {
                 activityYear === selectedMonthYear.year
             );
 
-
             return isMatch;
         } catch (error) {
             console.error(`Error parsing date for activity: ${activity.title}`, error);
@@ -84,14 +91,19 @@ export default function Calender() {
         }
     });
 
+    const displayedActivities = isHomePage ? filteredActivities.slice(0, 3) : filteredActivities;
+    console.log(filteredActivities);
+    console.log(displayedActivities);
+
+
     return (
         <article className="calender">
             <h2>Evenementenkalender</h2>
             <MonthYearSlider onMonthYearChange={handleMonthYearChange} />
             <ul className="calender__dates">
-                {filteredActivities.length > 0 ? (
-                    filteredActivities.map((activity, index) => {
-                        const activityKey = `${activity.title}-${activity.date}`;
+                {displayedActivities.length > 0 ? (
+                    displayedActivities.map((activity, index) => {
+                        const activityKey = index;
                         return (
                             <li className="calender__activity" key={activityKey}>
                                 <section className="calender__container">
@@ -116,7 +128,7 @@ export default function Calender() {
                                         <button className="calender__toggle" onClick={() => showHiddenText(activityKey)}>
                                             {hiddenTextVisibility[activityKey] ?
                                                 (
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-dash" viewBox="0 0 16 16">
                                                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
                                                     </svg>
                                                 ) : (
@@ -145,6 +157,9 @@ export default function Calender() {
                             <h3 className="calender__subHeading"></h3>
                         </section>
                     </li>
+                )}
+                {isHomePage && (
+                    <a href={route('calender.calender')} className="calender__showMore">Meer activiteit</a>
                 )}
             </ul>
         </article>
