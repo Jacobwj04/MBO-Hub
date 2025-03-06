@@ -9,9 +9,15 @@ function Form() {
     const user = usePage().props.auth.user.name;
     console.log(user)
 
+    async function sendProject(){
+        const { data } = await ajax({
+
+        });
+    }
+
     return (
         <AuthenticatedLayout>
-            <form encType="multipart/form-data" action={ route('admin.store') }>
+            <form encType="multipart/form-data" action={ route('projects.store') }>
                 <input type="hidden" name="_token" value={csrf} />
                 <input type="hidden" name="naam" value={ user } />
                 <input type="text" name="title" placeholder="Titel"/>

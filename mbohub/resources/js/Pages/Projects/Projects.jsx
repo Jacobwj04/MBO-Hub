@@ -23,7 +23,7 @@ function Projects() {
 		<>
 			<AuthenticatedLayout>
 				<section className="projects-coll">
-					<a href={ route('admin.create') } className="projects__new">Maak project ➤</a>
+					<a href={ route('projects.create') } className="projects__new">Maak project ➤</a>
 					<div className="projects__list">
 						{ dataSets }
 					</div>

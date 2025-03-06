@@ -9,8 +9,8 @@ function Project() {
         <AuthenticatedLayout>
             <section className="project">
                 <section className="project__admin">
-                    <a href={route('admin.edit', [project.id])} className="project__edit">Edit</a>
-                    <form action={route('admin.destroy', [project.id])} className="project__delete" method="post">
+                    <a href={route('projects.edit', [project.id])} className="project__edit">Edit</a>
+                    <form action={route('projects.destroy', [project.id])} className="project__delete" method="post">
                         <input type="hidden" name="_method" value="delete" />
                         <input type="hidden" name="_token" value={csrf} />
                         <input type="submit" value="Delete" />

@@ -1,19 +1,21 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { usePage } from "@inertiajs/react";
 import { useState } from "react";
+import React from 'react'
+import Form from '@/Pages/Projects/Form.jsx';
 
 function Edit() {
     const project = usePage().props.project;
     const csrf = document.querySelector('meta[name=csrf-token]').getAttribute("content");
     const user = usePage().props.auth.user.name;
 
+
     const [form, setForm] = useState({
         title: project.title,
         summary: project.summary,
         location: project.location,
         text: project.text,
-        highlights: project.highlights,
-        image: project.image
+        highlights: project.highlights
     });
 
     const editInputs = (event) => {
@@ -24,19 +26,33 @@ function Edit() {
         }));
     }
 
+    async function sendData(data){
+        data.preventDefault()
+        console.log(data.target);
+        // console.log(this.fileInput);
+        // fetch('/admin.update', {
+        //     headers: {
+        //         "Content-Type": "multipart/form-data",
+        //     },
+        //     method: "POST",
+        //     body: data,
+        // }).then((response) => {
+        //     console.log(response);
+        // })
+    }
+
     return (
         <AuthenticatedLayout>
             <section className="edit">
-                <form action={route('admin.update', [project.id])} className="edit__form" method="post">
-                    <input type="hidden" name="_method" value="PUT" />
+                <form className="edit__form">
                     <input type="hidden" name="_token" value={ csrf } />
                     <input type="text" name="title" placeholder="Titel" value={form.title} onChange={editInputs}/>
                     <textarea name="summary" placeholder="Sammenvatting" value={form.summary} onChange={editInputs}/>
                     <input type="text" name="location" placeholder="Locatie" value={form.location} onChange={editInputs}/>
                     <textarea name="text" placeholder="Text" value={form.text} onChange={editInputs}/>
                     <textarea name="highlights" placeholder="Uitgelicht" value={form.highlights} onChange={editInputs}/>
-                    {/*<input type="file" name="image" accept="image/*" onChange={editInputs}/>*/}
-                    <input type="submit" />
+                    <input type="file" name="image" accept="image/*" onChange={editInputs}/>
+                    <input type="submit" value="Submit"/>
                 </form>
             </section>
         </AuthenticatedLayout>
