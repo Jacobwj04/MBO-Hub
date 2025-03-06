@@ -32,7 +32,7 @@ export default function Project({ title, text, topLabelText, bottomLabelText, da
 
     return (
         <>
-            <div className="project-component" onClick={openModal}>
+            <div className="project-component">
                 <figure className="image-container">
                     <AuthenticatedLayout>
                         <a className="editButton" href={ route('projects.edit', id) }>
@@ -63,7 +63,7 @@ export default function Project({ title, text, topLabelText, bottomLabelText, da
                             <p className="project-summary">{text}</p>
                         </>
                     )}
-                    {readMore && <a className="project-read" href="">{readMore}</a>}
+                    {readMore && <button className="project-read" onClick={openModal}>{readMore}</button>}
                 </div>
             </div>
 

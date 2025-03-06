@@ -17,7 +17,8 @@
         min-height: 100vh;
     }
 
-    h2 {
+    &__mainTitle {
+        margin: 5rem 0;
         font-size: 3em;
     }
 
@@ -45,6 +46,10 @@
         width: 100%;
         height: max-content;
         border-left: 0.2rem solid map.get(colors.$borders, "red");
+
+        &--empty{
+            border: none;
+        }
     }
 
     &__date {
@@ -82,6 +87,10 @@
         position: relative;
         transition: height 0.3s ease-in-out;
         height: auto;
+
+        &--empty{
+            width: 100%;
+        }
 
         &[data-expanded="false"] {
             height: max-content;
