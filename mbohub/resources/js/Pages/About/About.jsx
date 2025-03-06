@@ -29,9 +29,9 @@ function About() {
             <section className="about-us-devs">
                 <h2 className="about-us-h2-devs">Developers</h2>
                 <div className="about-us-developer">
-                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Frontend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Luc Zuidema"} text={"Project leider, Backend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Milou Geervliet"} text={"Project leider, Frontend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Luc Zuidema"} text={"Project leider, Eindejaars Backend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Milou Geervliet"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
                 </div>
             </section>
             <section className="about-us-partners">
