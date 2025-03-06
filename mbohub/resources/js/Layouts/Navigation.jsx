@@ -36,18 +36,6 @@ function Navigation() {
                     <Navlink href={route('contact.contact')}>Contact</Navlink>
                     <Navlink href={route('login')}>Login</Navlink>
                 </div>
-
-                {/* <div className="user-info">
-                    {auth.user ? (
-                        <div className="login-user">
-                            <div>Welkom</div>
-                            <span className="user-name">{auth.user.name}!</span>
-                        </div>
-                    ) : (
-
-                        <span className="guest-name">Guest</span>
-                    )}
-                </div> */}
                 <button className="menu__button" onClick={handleNavToggle}>
                     {isNavOpen ? (
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
