@@ -98,7 +98,7 @@ export default function Calender({ isHomePage }) {
 
     return (
         <article className="calender">
-            <h2>Evenementenkalender</h2>
+            <h2 className="calender__mainTitle" >Evenementenkalender</h2>
             <MonthYearSlider onMonthYearChange={handleMonthYearChange} />
             <ul className="calender__dates">
                 {displayedActivities.length > 0 ? (
