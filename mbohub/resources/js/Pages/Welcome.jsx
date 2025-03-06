@@ -46,7 +46,7 @@ function Welcome() {
                 <Modal title={selectedProject.title} text={selectedProject.text} onClose={closeModal} button={false} />
             )}
 
-            <Calender />
+            <Calender isHomePage={true} />
 
             <FooterComponent />
 

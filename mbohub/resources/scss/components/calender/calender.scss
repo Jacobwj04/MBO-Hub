@@ -190,6 +190,14 @@
             opacity: 0;
         }
     }
+
+    &__showMore{
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, max-content, "0/0");
+        padding: 1rem 2rem;
+        font-size: 2em;
+        text-decoration: none;
+        margin: 5rem auto;
+    }
 }
 
 @media screen and (max-width: 64rem){
