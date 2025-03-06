@@ -1,3 +1,6 @@
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { usePage } from "@inertiajs/react";
+import { Project } from "@/Components/project-component.jsx";
 import React from "react";
 import FooterComponent from "../Contact/footer.jsx";
 import MultiCarousel from "@/Components/Carousel.jsx";
@@ -5,7 +8,7 @@ import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "../../Components/project-component.jsx";
 
 
-function About() {
+export function About() {
     
     return (
 
@@ -29,9 +32,9 @@ function About() {
             <section className="about-us-devs">
                 <h2 className="about-us-h2-devs">Developers</h2>
                 <div className="about-us-developer">
-                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Frontend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Luc Zuidema"} text={"Project leider, Backend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Milou Geervliet"} text={"Project leider, Frontend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Luc Zuidema"} text={"Project leider, Eindejaars Backend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Milou Geervliet"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
                 </div>
             </section>
             <section className="about-us-partners">
