@@ -29,4 +29,5 @@ function Projects() {
     );
 }
 
+import '../css/Projects.css';
 export default Projects;

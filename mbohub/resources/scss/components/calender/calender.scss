@@ -1,0 +1,231 @@
+@use '../../abstracts/colors';
+@use "sass:map";
+@use "../../abstracts/mixins";
+
+.calender {
+    position: relative;
+    max-width: 144em;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5em;
+    z-index: -1;
+
+    h2 {
+        font-size: 3em;
+    }
+
+    &__dates {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2em 5em;
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 4rem;
+    }
+
+    &__activity {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: max-content;
+        border-left: 0.1em solid map.get(colors.$borders, "black");
+    }
+
+    &__date {
+        position: absolute;
+        width: 8em;
+        aspect-ratio: 1/1;
+        border: 0.1em solid map.get(colors.$borders, "black");
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, 0%);
+        z-index: 1;
+        background: white;
+        padding: 0.5rem;
+
+        span {
+            font-size: 1.3em;
+            text-align: center;
+        }
+    }
+
+
+    &__activities {
+        width: 70%;
+        border: 0.1em solid map.get(colors.$borders, "lightGray");
+        padding: 2em;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        position: relative;
+        transition: height 0.3s ease-in-out;
+        height: auto;
+
+        &[data-expanded="false"] {
+            height: max-content;
+        }
+
+        &[data-expanded="true"] {
+            height: max-content;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        display: inline-block;
+    }
+
+    &__label {
+        padding: 0.5em 2em;
+        border-radius: 2em;
+        background: map.get(colors.$borders, "lightGray");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: map.get(colors.$textColor, "purple");
+        font-size: 1.3em;
+        height: max-content;
+        width: max-content;
+    }
+
+    &__text {
+        color: map.get(colors.$textColor, "lightGray");
+        font-size: 1.5em;
+    }
+
+    &__subHeading {
+        margin-top: 1em;
+        color: map.get(colors.$textColor, "darkGray");
+        font-size: 1.8em;
+    }
+
+    &__hiden {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-bottom: 1em;
+        overflow: hidden;
+        transform-origin: top;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+
+        &--show {
+            max-height: max-content;
+        }
+
+        &--hidden {
+            transform: scaleY(0);
+        }
+    }
+
+    &__hidenText {
+        opacity: 0;
+        font-size: 1.5em;
+        color: map.get(colors.$textColor, "lightGray");
+        transition: opacity 0.3s ease-in-out;
+
+        &--show {
+            opacity: 1;
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
+    }
+
+    &__toggle {
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 50%, 3em, "1/1", 1);
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        display: flex;
+
+        svg {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__link{
+        @include mixins.button(map.get(colors.$backgroundColors, "red"), map.get(colors.$textColor, "white"), 2em, max-content, "0/0");
+        padding: 1em 3em;
+        text-decoration: none;
+        font-size: 1.3em;
+        opacity: 0;
+
+        transition: opacity 0.3s ease-in-out;
+
+        &--show {
+            opacity: 1;
+        }
+
+        &--hidden {
+            opacity: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 64rem){
+    .calender{
+        &__container{
+            gap: 12rem;
+            justify-content: start;
+        }
+
+        &__activities{
+            margin: 0 2rem 0 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 50rem){
+    .calender{
+
+        &__header{
+            flex-direction: column-reverse;
+            gap: 1rem;
+        }
+
+        &__dates{
+            padding: 2rem;
+        }
+
+        &__activities{
+            margin: 0;
+        }
+
+        &__activity{
+            border: none;
+        }
+
+        &__container{
+            gap: 0rem;
+        }
+
+        &__date{
+            display: none;
+        }
+        
+    }
+}   
