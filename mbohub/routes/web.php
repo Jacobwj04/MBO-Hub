@@ -35,9 +35,7 @@ Route::get('/about', [AboutController::class, 'about'])->name('about.about');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.contact');
 
-Route::resources([
-	'/projects' => ProjectsController::class
-]);
+Route::resource('/projects', ProjectsController::class);
 
 Route::get('/calender', [CalenderController::class, 'calender'])->name('calender.calender');
 

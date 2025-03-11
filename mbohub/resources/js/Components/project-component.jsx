@@ -1,8 +1,20 @@
-import React, { useState } from "react";
-import Modal from "./Modal";
+import React, { useState } from 'react';
+import Modal from './Modal';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 
-export default function Project({ title, text, topLabelText, bottomLabelText, date, readMore, circle, textcentered, button, id = 1 }) {
+export default function Project({
+                                    title,
+                                    text,
+                                    topLabelText,
+                                    bottomLabelText,
+                                    date,
+                                    image,
+                                    readMore,
+                                    circle,
+                                    textcentered,
+                                    button,
+                                    id = 1,
+                                }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const openModal = () => {
@@ -14,7 +26,7 @@ export default function Project({ title, text, topLabelText, bottomLabelText, da
                 projectComponents[i].style.zIndex = '-1';
             }
         }
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
@@ -26,8 +38,8 @@ export default function Project({ title, text, topLabelText, bottomLabelText, da
                 projectComponents[i].style.zIndex = '1';
             }
         }
-        document.body.classList.remove("dark-background");
-        document.body.style.overflow = "";
+        document.body.classList.remove('dark-background');
+        document.body.style.overflow = '';
     };
 
     return (
@@ -46,28 +58,28 @@ export default function Project({ title, text, topLabelText, bottomLabelText, da
                     { circle ? (
                         <img className="circle-image" src="https://placehold.co/600x400" alt="image from projects" />
                     ) : (
-                        <img className="square-image" src="https://placehold.co/600x400" alt="image from projects" />
+                        <img className="square-image" src={ image } alt="image from projects" />
                     ) }
                 </figure>
                 <div className="project-content">
-                    { date && <time className="project-date">{date}</time>}
-                    {bottomLabelText && <label className="project-bottom-label">{bottomLabelText}</label>}
-                    {textcentered ? (
+                    { date && <time className="project-date">{ date }</time> }
+                    { bottomLabelText && <label className="project-bottom-label">{ bottomLabelText }</label> }
+                    { textcentered ? (
                         <>
-                            <h2 className="project-h2-center">{title}</h2>
-                            <p className="project-summary-center">{text}</p>
+                            <h2 className="project-h2-center">{ title }</h2>
+                            <p className="project-summary-center">{ text }</p>
                         </>
                     ) : (
                         <>
-                            <h2 className="project-h2">{title}</h2>
-                            <p className="project-summary">{text}</p>
+                            <h2 className="project-h2">{ title }</h2>
+                            <p className="project-summary">{ text }</p>
                         </>
-                    )}
-                    {readMore && <button className="project-read" onClick={openModal}>{readMore}</button>}
+                    ) }
+                    { readMore && <button className="project-read" onClick={ openModal }>{ readMore }</button> }
                 </div>
             </div>
 
-            {isOpen && <Modal title={title} text={text} date={date} onClose={closeModal} button={button} />}
+            { isOpen && <Modal title={ title } text={ text } date={ date } onClose={ closeModal } button={ button } /> }
         </>
     );
 }
