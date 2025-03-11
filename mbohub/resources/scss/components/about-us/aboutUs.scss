@@ -46,6 +46,7 @@ $title: 3em;
     justify-content: center;
     flex-direction: column;
     gap: 1em;
+    flex-wrap: wrap;
 
     .about-us-h1 {
         padding: 1em;
@@ -60,6 +61,7 @@ $title: 3em;
         justify-content: center;
         flex-direction: row;
         gap: 1em;
+        flex-wrap: wrap;
     }
 }
 
@@ -101,5 +103,42 @@ $title: 3em;
     }
 }
 
+@media screen and (max-width: 800px) {
+    .about-us-amsterdam750 .about-us-amsterdam-text-container .about-us-amsterdam-h1 {
+        font-size: 3em;
+    }
 
+    .about-us-amsterdam750 .about-us-amsterdam-text-container .about-us-amsterdam-text {
+        font-size: 1.5em;
+    }
 
+    .about-us-amsterdam750 .about-us-amsterdam-text-container {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    
+    .about-us-amsterdam750 .about-us-figure .about-us-slinger {
+        width: 22em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about-us-amsterdam750 .about-us-amsterdam-text-container .about-us-amsterdam-h1 {
+        font-size: 2.5em;
+    }
+    
+    .about-us-amsterdam750 .about-us-figure .about-us-slinger {
+        width: 22em;
+    }
+
+    .about-us-amsterdam750 .about-us-amsterdam-text-container {
+        width: 60%;
+    }
+
+    .about-us-amsterdam750 .about-us-figure .about-us-slinger {
+        width: 18em;
+    }
+
+}
