@@ -12,7 +12,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        $projects = Project::where('public', 1)->get()->map(function ($project) {
+        $projects = Project::where(column: 'public', operator: 1)->get()->map(function ($project) {
             return [
                 'id'         => $project->id,
                 'title'      => $project->title,
