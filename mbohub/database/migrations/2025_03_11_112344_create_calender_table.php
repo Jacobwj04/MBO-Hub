@@ -11,16 +11,16 @@ class CreateCalenderTable extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('calender');
+        Schema::dropIfExists('calenders');
 
-        Schema::create('calender', function (Blueprint $table) {
+        Schema::create('calenders', function (Blueprint $table) {
             $table->id();
             $table->string('title', 255);
             $table->date('date');
-            $table->text('summary');
+            $table->string('summary', 255);
             $table->string('location', 255);
             $table->string('label', 255);
-            $table->string('hiddenText', 255);
+            $table->text('hiddenText');
             $table->string('link', 255);
             $table->timestamp('updated_at')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
@@ -28,11 +28,11 @@ class CreateCalenderTable extends Migration
 
         if (DB::getDriverName() === 'sqlite') {
             DB::statement('
-                CREATE TRIGGER update_calander_updated_at
-                AFTER UPDATE ON calender
+                CREATE TRIGGER update_calanders_updated_at
+                AFTER UPDATE ON calenders
                 FOR EACH ROW
                 BEGIN
-                    UPDATE calender
+                    UPDATE calenders
                     SET updated_at = CURRENT_TIMESTAMP
                     WHERE id = OLD.id;
                 END;
@@ -45,6 +45,6 @@ class CreateCalenderTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('calender');
+        Schema::dropIfExists('calenders');
     }
 };

@@ -27,14 +27,12 @@ class Calender extends Model
      */
     protected $fillable = [
         'title',
-        'summary',
-        'location', // Added from migration
-        'text',
-        'highlights', // Corrected from 'highlight' to match migration
-        'image_path', // Replaced 'image' with filesystem path
-        'image_mime', // Added for MIME type
-        'highlighted', // Added from migration
-        'public', // Added from migration
+        'date',
+        'summary', 
+        'location',
+        'label', // Corrected from 'highlight' to match migration
+        'hiddenText', // Replaced 'image' with filesystem path
+        'link', // Added for MIME type
     ];
 
     /**

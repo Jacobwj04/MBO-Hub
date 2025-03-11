@@ -157,7 +157,7 @@ export default function Calender({ isHomePage }) {
                     </li>
                 )}
                 {isHomePage && (
-                    <a href={route('calender.calender')} className="calender__showMore">Meer activiteit</a>
+                    <a href={route('calender.index')} className="calender__showMore">Meer activiteit</a>
                 )}
             </ul>
         </article>

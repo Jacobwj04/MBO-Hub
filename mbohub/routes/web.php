@@ -37,7 +37,7 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact.con
 
 Route::resource('/projects', ProjectsController::class);
 
-Route::get('/calender', [CalenderController::class, 'calender'])->name('calender.calender');
+Route::resource('/calender', CalenderController::class);
 
 require __DIR__ . '/auth.php';
 

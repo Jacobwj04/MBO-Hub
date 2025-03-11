@@ -32,7 +32,7 @@ function Navigation() {
                 <div>
                     <Navlink href={route('projects.index')}>Projecten</Navlink>
                     <Navlink href={route('about.about')}>About</Navlink>
-                    <Navlink href={route('calender.calender')}>Kalender</Navlink>
+                    <Navlink href={route('calender.index')}>Kalender</Navlink>
                     <Navlink href={route('contact.contact')}>Contact</Navlink>
                     <Navlink href={route('login')}>Login</Navlink>
                 </div>
@@ -51,7 +51,7 @@ function Navigation() {
                     <div className="menu__container">
                         <a className="menu__link" href={route('projects.index')}>Projects</a>
                         <a className="menu__link" href={route('about.about')}>About</a>
-                        <a className="menu__link" href={route('calender.calender')}>Calender</a>
+                        <a className="menu__link" href={route('calender.index')}>Calender</a>
                         <a className="menu__link" href={route('contact.contact')}>Contact</a>
                         <a className="menu__link" href={route('login')}>Login</a>
                     </div>
