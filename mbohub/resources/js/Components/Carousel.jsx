@@ -15,13 +15,23 @@ function MultiCarousel() {
 
     useEffect(() => {
         const updateVisibleSlides = () => {
+            let newVisibleSlides;
             if (window.innerWidth < 600) {
-                setVisibleSlides(1);
+                newVisibleSlides = 1;
             } else if (window.innerWidth < 900) {
-                setVisibleSlides(2);
+                newVisibleSlides = 2;
             } else {
-                setVisibleSlides(4);
+                newVisibleSlides = 4;
             }
+
+            setVisibleSlides((prev) => {
+                if (newVisibleSlides !== prev) {
+                    setCurrentIndex((prevIndex) => 
+                        Math.min(prevIndex, images.length - newVisibleSlides)
+                    );
+                }
+                return newVisibleSlides;
+            });
         };
 
         updateVisibleSlides();
@@ -31,25 +41,43 @@ function MultiCarousel() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % (images.length - (visibleSlides - 1)));
+            setCurrentIndex((prevIndex) => {
+                const maxIndex = images.length - visibleSlides;
+                return prevIndex >= maxIndex ? 0 : prevIndex + 1;
+            });
         }, 3000);
 
         return () => clearInterval(interval);
     }, [visibleSlides]);
 
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) => 
+            Math.min(prevIndex + 1, images.length - visibleSlides)
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => 
+            Math.max(prevIndex - 1, 0)
+        );
+    };
+
     return (
         <div className="carousel">
-            <div className="carousel-track" style={{ transform: `translateX(-${currentIndex * (100 / visibleSlides)}%)` }}>
+            <div 
+                className="carousel-track" 
+                style={{ transform: `translateX(-${(100 / images.length) * currentIndex}%)` }}
+            >
                 {images.map((image, idx) => (
                     <a className="carousel-link" key={idx} href={image.link} target="_blank" rel="noopener noreferrer">
                         <img src={image.placeholder} alt={`Slide ${idx}`} className="carousel-image" />
                     </a>
                 ))}
             </div>
-            <button className="carousel-prev" onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % (images.length - (visibleSlides - 1)))}>
+            <button className="carousel-prev" onClick={prevSlide} disabled={currentIndex === 0}>
                 ◀
             </button>
-            <button className="carousel-next" onClick={() => setCurrentIndex((currentIndex + 1) % (images.length - (visibleSlides - 1)))}>
+            <button className="carousel-next" onClick={nextSlide} disabled={currentIndex >= images.length - visibleSlides}>
                 ▶
             </button>
         </div>
