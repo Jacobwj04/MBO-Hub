@@ -18,7 +18,7 @@ export default function EditProject({ projectId }) {
             });
 
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${ response.status }`);
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
             router.get('/projects')
 
@@ -28,23 +28,27 @@ export default function EditProject({ projectId }) {
     }
 
     return (
-        <form onSubmit={ sendData } encType="multipart/form-data">
-            <input type="hidden" name="_token" value={ props.csrf_token || document.querySelector('meta[name="csrf-token"]').content } />
-            <input type="text" name="title" placeholder="Title" />
-            <input type="text" name="summary" placeholder="Summary" />
-            <input type="text" name="location" placeholder="Location" />
-            <input type="text" name="text" placeholder="Text" />
-            <input type="text" name="highlights" placeholder="Highlights" />
-            <input type="file" name="image" accept="image/*" />
-            <div>
-                <input type="checkbox" name="public" />
-                <label htmlFor="public">Publiek</label>
-            </div>
-            <div>
-                <input type="checkbox" name="highlighted" />
-                <label htmlFor="highlighted">Uitgelicht</label>
-            </div>
-            <input type="submit" value="Submit" />
-        </form>
+        <div className="project-form-page">
+            <form className="project-form-page__form" onSubmit={sendData} encType="multipart/form-data">
+
+                <input className='project-form-page__input' type="hidden" name="_token" value={props.csrf_token || document.querySelector('meta[name="csrf-token"]').content} />
+                <input className='project-form-page__input' type="text" name="title" placeholder="Titel" />
+
+
+                <input className='project-form-page__input' type="file" name="image" accept="image/*" />
+                <textarea className='project-form-page__textarea' name="summary" placeholder="Samenvatting" />
+
+                <textarea className='project-form-page__textarea' name="text" placeholder="Tekst" />
+                <div className="project-form-page__public">
+                    <label className='project-form-page__public--label' htmlFor="public">Publiek</label>
+                    <input className='project-form-page__checkbox' type="checkbox" name="public" />
+                </div>
+                <div className="project-form-page__highlighted">
+                    <label className='project-form-page__highlighted--label' htmlFor="highlighted">Uitgelicht</label>
+                    <input className='project-form-page__checkbox' type="checkbox" name="highlighted" />
+                </div>
+                <input className='project-form-page__submit' type="submit" value="Verzenden" />
+            </form>
+        </div>
     );
 }

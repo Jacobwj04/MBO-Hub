@@ -1,0 +1,68 @@
+@use '../../abstracts/colors';
+@use "sass:map";
+@use "../../abstracts/mixins";
+
+.project-form-page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 50rem;
+        height: max-content;
+        padding: 2rem;
+        @include mixins.border(0.2rem, "red");
+        border-radius: 2rem;
+    }
+
+    &__input{
+        width: 100%;
+        height: max-content;
+        @include mixins.border(0.2rem, "lightGray");
+        padding: 1rem;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    &__public {
+        display: flex;
+        gap: 20%;
+
+        &--checkbox {
+            display: inline-block;
+        }
+    }
+
+    &__highlighted {
+        display: flex;
+        gap: 18.2%;
+
+        &--label {
+            display: inline-block;
+        }
+    }
+
+    &__textarea{
+        width: 100%;
+        height: max-content;
+        @include mixins.border(0.2rem, "lightGray");
+        padding: 1rem;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+        resize:vertical;
+    }
+
+    &__submit{
+        width: max-content;
+        padding: 1rem;
+        @include mixins.border(0.2rem, "red");
+        background: white;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+    }
+}
