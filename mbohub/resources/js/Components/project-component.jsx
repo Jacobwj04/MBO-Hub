@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { router } from '@inertiajs/react';
 
 export default function Project({
                                     title,
@@ -9,6 +10,7 @@ export default function Project({
                                     bottomLabelText,
                                     date,
                                     image,
+                                    summary,
                                     readMore,
                                     circle,
                                     textcentered,
@@ -42,17 +44,28 @@ export default function Project({
         document.body.style.overflow = '';
     };
 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        if (confirm('Are you sure you want to delete this project?')) {
+            router.delete(route('projects.destroy', id), {
+                onSuccess: () => {
+                    console.log('Project deleted successfully');
+                },
+                onError: (errors) => {
+                    console.error('Delete error:', errors);
+                },
+            });
+        }
+    };
+
     return (
         <>
             <div className="project-component">
                 <figure className="image-container">
                     <AuthenticatedLayout>
-                        <a className="editButton" href={ route('projects.edit', id) }>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                            </svg>
-                        </a>
+                        <button className="editButton" onClick={ handleDelete }>
+                            X
+                        </button>
                     </AuthenticatedLayout>
                     { topLabelText && <label className="project-top-label">{ topLabelText }</label> }
                     { circle ? (
@@ -67,19 +80,19 @@ export default function Project({
                     { textcentered ? (
                         <>
                             <h2 className="project-h2-center">{ title }</h2>
-                            <p className="project-summary-center">{ text }</p>
+                            <p className="project-summary-center">{ summary }</p>
                         </>
                     ) : (
                         <>
                             <h2 className="project-h2">{ title }</h2>
-                            <p className="project-summary">{ text }</p>
+                            <p className="project-summary">{ summary }</p>
                         </>
                     ) }
                     { readMore && <button className="project-read" onClick={ openModal }>{ readMore }</button> }
                 </div>
             </div>
 
-            { isOpen && <Modal title={ title } text={ text } date={ date } onClose={ closeModal } button={ button } /> }
+            { isOpen && <Modal title={ title } text={ text } date={ date } image={ image } onClose={ closeModal } button={ button } /> }
         </>
     );
 }

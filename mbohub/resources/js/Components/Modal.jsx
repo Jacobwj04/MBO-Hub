@@ -1,4 +1,4 @@
-export default function Modal({ title, text, date, onClose, button }) {
+export default function Modal({ title, text, date, onClose, button, image }) {
     return (
         <>
             <div className="model__background">
@@ -10,10 +10,10 @@ export default function Modal({ title, text, date, onClose, button }) {
                             <datetime className="modal-date" datetime="">{date}</datetime>
                         </div>
                         <figure className="modal-content-img">
-                            <img className="modal-img" src="https://placehold.co/400x200" alt="" />
+                            <img className="modal-img" src={image} alt="" />
                         </figure>
                         <div className="modal-content-bottom">
-                            <p className="modal-p">{"lorem ipsum. Lorem ipsum lorem ipsum lorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsumlorem ipsum. Lorem ipsum lorem ipsum"}</p>
+                            <p className="modal-p">{text}</p>
                             {button && (
                                 <button className="modal-btn">Bekijk het verhaal</button>
                             )}

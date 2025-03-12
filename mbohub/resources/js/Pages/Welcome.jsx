@@ -41,6 +41,7 @@ function Welcome() {
                             <Project
                                 title={ project.title }
                                 text={ project.text }
+                                summary={ project.summary }
                                 id={ project.id }
                                 image={ project.image_url }
                                 readMore={ 'lees meer' }

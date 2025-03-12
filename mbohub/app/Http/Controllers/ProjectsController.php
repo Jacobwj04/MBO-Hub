@@ -123,12 +123,17 @@ class ProjectsController extends Controller
         }
     }
 
-    public function destroy(int $id)
+    public function show(int $id)
     {
         $project = Project::findOrFail($id);
-        $project->delete();
+        return Inertia::render('Projects2/Show', ['project' => $project]);
+    }
 
-        return redirect(route('Projects2.projects'));
+    public function destroy(int $id)
+    {
+        Project::findOrFail($id)->delete();
+
+        return redirect('/');
     }
 
 }
