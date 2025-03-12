@@ -6,10 +6,9 @@ import Navigation from '@/Layouts/Navigation.jsx';
 import '../../../scss/style.scss';
 
 export default function Projects() {
-    const { props } = usePage();
-    const projects = props.projects || []; // Fallback to empty array if undefined
+    const { projects } = usePage().props;
 
-    console.log('Projects:', projects); // Log all projects for debugging
+    console.log('Projects:', projects);
 
     return (
         <>

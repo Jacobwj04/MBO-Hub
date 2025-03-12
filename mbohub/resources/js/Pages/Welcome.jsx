@@ -10,6 +10,9 @@ import { usePage } from "@inertiajs/react";
 
 function Welcome() {
     const { calenders } = usePage().props;
+     const { projects } = usePage().props;
+    
+    console.log('Projects:', projects);
     const [selectedProject, setSelectedProject] = useState(null);
 
     const openModal = (projectData) => {

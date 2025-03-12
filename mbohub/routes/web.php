@@ -9,10 +9,24 @@ use App\Http\Controllers\ProjectsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Models\Calender;
+use App\Models\Project;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     $calender = Calender::all();
+
+	$projects = Project::where(column: 'public', operator: 1)->get()->map(function ($project) {
+        return [
+            'id'         => $project->id,
+            'title'      => $project->title,
+            'summary'    => $project->summary,
+            'location'   => $project->location,
+            'text'       => $project->text,
+            'highlights' => $project->highlights,
+            'datum'      => $project->datum ?? null,
+            'image_url'  => Storage::url($project->image_path),
+        ];
+    });
 
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -20,6 +34,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
         'calenders' => $calender,
+		'projects' => $projects,
     ]);
 });
 
