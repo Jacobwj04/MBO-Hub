@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import Project from "@/Components/project-component";
 import Modal from "@/Components/Modal";
@@ -11,7 +11,7 @@ import { usePage } from "@inertiajs/react";
 function Welcome() {
     const { calenders } = usePage().props;
      const { projects } = usePage().props;
-    
+
     console.log('Projects:', projects);
     const [selectedProject, setSelectedProject] = useState(null);
 
@@ -26,7 +26,7 @@ function Welcome() {
     return (
         <GuestLayout hideNavigation={false}>
             <Banner />
-      
+
             <section className="info">
                 <h2 className="info__title">MBO-Hub Amsterdam</h2>
                 <p className="info__paragraph">MBO-Hub Amsterdam is een samenwerking tussen ROC van Amsterdam, Mediacollege Amsterdam en HMC, opgericht in het kader van Amsterdam 750.</p>
@@ -36,22 +36,26 @@ function Welcome() {
             <section className="projects">
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
-
-                    <Project title={"project"} labelText={"Dit is een label"} text={"lorem ipsum lorem ipsum"} />
-                    <Project title={"project"} labelText={"Dit is een test"} text={"lorem ipsum lorem ipsum"} />
-
-                    <Project title={"project"} date={"8 november 2023"} text={"lorem ipsum lorem ipsum"} readMore={"Lees meer"} />
-                    <Project title={"project"} topLabelText={"Dit is een label"} text={"lorem ipsum lorem ipsum"} bottomLabelText={"Dit is een label"} />
-
+                    { projects.map((project) => (
+                        <li key={ project.id }>
+                            <Project
+                                title={ project.title }
+                                text={ project.text }
+                                id={ project.id }
+                                image={ project.image_url }
+                                readMore={ 'lees meer' }
+                            />
+                        </li>
+                    )) }
                 </ul>
             </section>
 
-            {/* Toon Modal als een project is geselecteerd */}
-            {selectedProject && (
-                <Modal title={selectedProject.title} text={selectedProject.text} onClose={closeModal} button={false} />
-            )}
+            {/* Toon Modal als een project is geselecteerd */ }
+            { selectedProject && (
+                <Modal title={ selectedProject.title } text={ selectedProject.text } onClose={ closeModal } button={ false } />
+            ) }
 
-            <Calender isHomePage={true} calenders={calenders} />
+            <Calender isHomePage={ true } calenders={ calenders } />
 
             <FooterComponent />
 
