@@ -13,7 +13,6 @@ function Edit() {
     const [form, setForm] = useState({
         title: project.title,
         summary: project.summary,
-        location: project.location,
         text: project.text,
         highlights: project.highlights
     });
@@ -48,7 +47,6 @@ function Edit() {
                     <input type="hidden" name="_token" value={ csrf } />
                     <input type="text" name="title" placeholder="Titel" value={form.title} onChange={editInputs}/>
                     <textarea name="summary" placeholder="Sammenvatting" value={form.summary} onChange={editInputs}/>
-                    <input type="text" name="location" placeholder="Locatie" value={form.location} onChange={editInputs}/>
                     <textarea name="text" placeholder="Text" value={form.text} onChange={editInputs}/>
                     <textarea name="highlights" placeholder="Uitgelicht" value={form.highlights} onChange={editInputs}/>
                     <input type="file" name="image" accept="image/*" onChange={editInputs}/>

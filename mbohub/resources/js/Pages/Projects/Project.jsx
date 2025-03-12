@@ -21,7 +21,6 @@ function Project() {
 
                     <section className="project__left">
                         <h2 className="project__name">{ project.title }</h2>
-                        <h3>{ project.location }</h3>
                         <h3>{ project.created_at }</h3>
                         <p className="project__info">{ project.summary }</p>
 

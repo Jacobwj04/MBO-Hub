@@ -14,22 +14,36 @@ export default function Projects() {
         <>
             <Navigation />
             <AuthenticatedLayout>
-                <a className="createButton" href={route('projects.create')}>
+                <a className="createButton" href={ route('projects.create') }>
                     <span>Create</span>
                 </a>
+                {/*<ul className="project-container">*/}
+                {/*    { projects.map((project) => (*/}
+                {/*        <li key={ project.id }>*/}
+                {/*            <Project*/}
+                {/*                title={ project.title }*/}
+                {/*                text={ project.text }*/}
+                {/*                id={ project.id }*/}
+                {/*                image={ project.image_url }*/}
+                {/*                readMore={ 'lees meer' }*/}
+                {/*            />*/}
+                {/*            { console.log('Project:', project) }*/}
+                {/*        </li>*/}
+                {/*    )) }*/}
+                {/*</ul>*/}
             </AuthenticatedLayout>
             <main className="projects projects__page">
                 <ul className="project-container">
-                    {projects.map((project) => (
-                        <li key={project.id}>
+                    { projects.map((project) => (
+                        <li key={ project.id }>
                             <Project
-                                title={project.title}
-                                text={project.text}
-                                id={project.id}
-                                image={project.image_url}
-                                readMore={"lees meer"}
+                                title={ project.title }
+                                text={ project.text }
+                                id={ project.id }
+                                image={ project.image_url }
+                                readMore={ 'lees meer' }
                             />
-                            {console.log('Project:', project)}
+                            { console.log('Project:', project) }
                         </li>
                     ))}
                 </ul>

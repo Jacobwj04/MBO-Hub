@@ -17,7 +17,6 @@ class ProjectsController extends Controller
                 'id'         => $project->id,
                 'title'      => $project->title,
                 'summary'    => $project->summary,
-                'location'   => $project->location,
                 'text'       => $project->text,
                 'highlights' => $project->highlights,
                 'datum'      => $project->datum ?? null,
@@ -64,11 +63,12 @@ class ProjectsController extends Controller
                 'title'      => ['required', 'string', 'max:255'],
                 'summary'    => ['required', 'string'],
                 'text'       => ['required', 'string'],
-                'highlights' => ['nullable', 'string'],
                 'image'      => ['required', 'image', 'mimes:jpeg,png,jpg,svg', 'max:2048'],
                 $public      => ['integer'],
                 $highlighted => ['integer'],
             ]);
+
+
 
             $imageFile = $request->file('image');
             if (!$imageFile->isValid())
@@ -81,13 +81,12 @@ class ProjectsController extends Controller
 
             // @note example code of how to log data in Laravel
 
-            //            Log::info('Updating project ID: ' . $project->id . ', Saved image path: ' . $imagePath);
+            // Log::info('Updating project ID: ' . $project->id . ', Saved image path: ' . $imagePath);
 
             $data = [
                 'title'       => $validated['title'],
                 'summary'     => $validated['summary'],
                 'text'        => $validated['text'],
-                'highlights'  => $validated['highlights'],
                 'image_path'  => $imagePath,
                 'public'      => $public,
                 'highlighted' => $highlighted,
