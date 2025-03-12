@@ -6,8 +6,10 @@ import FooterComponent from "./Contact/footer";
 import { Banner } from "@/Layouts/banner";
 import Calender from "@/Components/calender/calender";
 import InfoCard from "@/Components/infoCrad";
+import { usePage } from "@inertiajs/react";
 
 function Welcome() {
+    const { calenders } = usePage().props;
     const [selectedProject, setSelectedProject] = useState(null);
 
     const openModal = (projectData) => {
@@ -46,7 +48,7 @@ function Welcome() {
                 <Modal title={selectedProject.title} text={selectedProject.text} onClose={closeModal} button={false} />
             )}
 
-            <Calender isHomePage={true} />
+            <Calender isHomePage={true} calenders={calenders} />
 
             <FooterComponent />
 

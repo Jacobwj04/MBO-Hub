@@ -16,25 +16,6 @@ class CalenderController extends Controller
         return Inertia::render('Calender/CalenderPage', ['calenders' => $calender]);
     }
 
-       public function indexComponet()
-       {
-            $calender = Calender::all();
-
-            return response()->json($calender);
-
-            return response()->json([
-                'title' => $calender['title'],
-                'date' => $calender['date'],
-                'summary' => $calender['summary'],
-                'location' => $calender['location'],
-                'label' => $calender['label'],
-                'hiddenText' => $calender['hiddenText'],
-                'link' => $calender['link'],
-            ]);
-    
-        //    return Inertia::render('Projects2/Project', ['calenders' => $calender]);
-       }
-
     public function create()
     {
         return Inertia::render('Calender/form');

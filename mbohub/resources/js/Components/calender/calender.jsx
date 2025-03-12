@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { MonthYearSlider } from "./monthpicker";
-import { parse, getMonth, getYear } from 'date-fns';
+import { parse, getMonth, getYear, format, isValid } from 'date-fns';
 import { nl } from 'date-fns/locale';
 
-export default function Calender({ isHomePage }) {
+export default function Calender({ isHomePage, calenders }) {
+    console.log(calenders);
+
+    function formatDate(dateString) {
+        try {
+            const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
+            if (isValid(parsedDate)) {
+                return format(parsedDate, 'dd MMMM yyyy', { locale: nl });
+            } else {
+                console.error("Invalid parsed date:", dateString);
+                return "Invalid date";
+            }
+        } catch (error) {
+            console.error("Error formatting date:", error);
+            return "Invalid date";
+        }
+    }
 
     const [hiddenTextVisibility, setHiddenTextVisibility] = useState({});
 
@@ -23,60 +39,13 @@ export default function Calender({ isHomePage }) {
         }));
     };
 
-    const activities = [
-        {
-            date: "22 februari 2025",
-            title: "Workshop UX/UI Design",
-            label: "excursie",
-            text: "zaterdag 22 februari 2025",
-            location: "B.Amsterdam",
-            subHeading: "Bezoek aan verschillende innovatieve startups in Amsterdam.",
-        },
-        {
-            date: "23 februari 2025",
-            title: "Workshop UX/UI Design",
-            label: "excursie",
-            text: "zaterdag 23 februari 2025",
-            location: "B.Amsterdam",
-            subHeading: "Bezoek aan verschillende innovatieve startups in Amsterdam.",
-        },
-        {
-            date: "23 april 2025",
-            title: "Another Workshop",
-            label: "training",
-            text: "Zondag 23 april 2025",
-            location: "Online",
-            subHeading: "Learn new skills.",
-        },
-        {
-            date: "15 maart 2025",
-            title: "March Workshop",
-            label: "training",
-            text: "Zaterdag 15 maart 2025",
-            location: "Some Place",
-            subHeading: "March event",
-        },
-        {
-            date: "16 maart 2025",
-            title: "Maart Workshop",
-            label: "training",
-            text: "Zaterdag 16 maart 2025",
-            location: "Some Place",
-            subHeading: "March event",
-        },
-        {
-            date: "16 maart 2025",
-            title: "Maart Workshop",
-            label: "training",
-            text: "Zaterdag 16 maart 2025",
-            location: "Some Place",
-            subHeading: "March event",
-        },
-    ];
+    const sortedCalenders = [...calenders].sort((a, b) => {
+        return new Date(a.date) - new Date(b.date);
+    });
 
-    const filteredActivities = activities.filter((activity) => {
+    const filteredActivities = sortedCalenders.filter((activity) => {
         try {
-            const parsedDate = parse(activity.date, 'dd MMMM yyyy', new Date(), { locale: nl });
+            const parsedDate = parse(activity.date, 'yyyy-MM-dd', new Date());
             const activityMonthIndex = getMonth(parsedDate);
             const activityYear = getYear(parsedDate);
 
@@ -93,9 +62,6 @@ export default function Calender({ isHomePage }) {
     });
 
     const displayedActivities = isHomePage ? filteredActivities.slice(0, 3) : filteredActivities;
-    console.log(filteredActivities);
-    console.log(displayedActivities);
-
 
     return (
         <article className="calender">
@@ -109,7 +75,7 @@ export default function Calender({ isHomePage }) {
                             <li className="calender__activity" key={activityKey}>
                                 <section className="calender__container">
                                     <figure className="calender__date">
-                                        <span id="date-of-activity">{activity.date}</span>
+                                        <span id="date-of-activity">{formatDate(activity.date)}</span>
                                     </figure>
                                     <div></div>
                                     <section className="calender__activities" data-expanded={hiddenTextVisibility[activityKey] ? "true" : "false"}>
@@ -117,14 +83,14 @@ export default function Calender({ isHomePage }) {
                                             <h2 className="calender__title">{activity.title}</h2>
                                             <span className="calender__label">{activity.label}</span>
                                         </div>
-                                        <p className="calender__text">{activity.text}</p>
+                                        <p className="calender__text">{formatDate(activity.date)}</p>
                                         <p className="calender__text">Locatie: {activity.location}</p>
-                                        <h3 className="calender__subHeading">{activity.subHeading}</h3>
+                                        <h3 className="calender__subHeading">{activity.summary}</h3>
                                         <section className={`calender__hiden calender__hiden--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>
                                             <p className={`calender__hidenText calender__hidenText--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt non eos amet aperiam accusantium quia delectus voluptatem voluptatum perferendis deleniti saepe eaque, laborum minus, pariatur placeat quidem dolorum voluptate quas!
+                                                {activity.hiddenText}
                                             </p>
-                                            <a href="" className={`calender__link calender__link--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>Schrijf je in</a>
+                                            <a href={activity.link} className={`calender__link calender__link--${hiddenTextVisibility[activityKey] ? 'show' : 'hidden'}`}>Schrijf je in</a>
                                         </section>
                                         <button className="calender__toggle" onClick={() => showHiddenText(activityKey)}>
                                             {hiddenTextVisibility[activityKey] ?

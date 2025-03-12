@@ -8,17 +8,20 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Models\Calender;
 use Inertia\Inertia;
 
-Route::get('/', function ()
-	{
-		return Inertia::render('Welcome', [
-			'canLogin'       => Route::has('login'),
-			'canRegister'    => Route::has('register'),
-			'laravelVersion' => Application::VERSION,
-			'phpVersion'     => PHP_VERSION,
-		]);
-	});
+Route::get('/', function () {
+    $calender = Calender::all();
+
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+        'calenders' => $calender,
+    ]);
+});
 
 //Route::get('/dashboard', function () {
 //    return Inertia::render('Dashboard');
@@ -38,7 +41,7 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact.con
 Route::resource('/projects', ProjectsController::class);
 
 Route::resource('/calender', CalenderController::class);
-Route::post('/calender', [CalenderController::class, 'indexComponet'])->name('calender.indexComponet');
+Route::post('/', [CalenderController::class, 'indexComponet'])->name('calender.indexComponet');
 
 require __DIR__ . '/auth.php';
 

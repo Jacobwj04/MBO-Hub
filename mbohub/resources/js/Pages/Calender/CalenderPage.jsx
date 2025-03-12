@@ -6,9 +6,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { usePage } from "@inertiajs/react";
 
 export default function CalenderPage() {
-    const {props} = usePage();
-    const calender = props.calenders || [];
-    console.log(calender);
+    const { calenders } = usePage().props;
     return (
         <>
             <Navigation />
@@ -18,7 +16,7 @@ export default function CalenderPage() {
                 </a>
             </AuthenticatedLayout>
             <main className="calender__main">
-                <Calender />
+                <Calender calenders={calenders} />
             </main>
             <FooterComponent />
         </>
