@@ -27,6 +27,10 @@
         padding: 1rem;
         font-size: 1.5rem;
         border-radius: 1rem;
+
+        &--checkbox{
+            width: max-content;
+        }
     }
 
     &__textarea{
@@ -46,5 +50,15 @@
         background: white;
         border-radius: 1rem;
         font-size: 1.5rem;
+    }
+
+    span{
+        display: flex;
+        gap: 1rem;
+    }
+
+    a{
+        text-decoration: none;
+        color: map.get(colors.$textColor, "red");
     }
 }
