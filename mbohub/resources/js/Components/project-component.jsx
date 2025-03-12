@@ -84,7 +84,7 @@ export default function Project({
                     {textcentered ? (
                         <>
                             <h2 className="project-h2-center">{title}</h2>
-                            <p className="project-summary-center">{summary}</p>
+                            <p className="project-summary-center">{text}</p>
                         </>
                     ) : (
                         <>

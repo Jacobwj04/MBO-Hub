@@ -22,6 +22,7 @@ class ProjectsController extends Controller
                     'highlights' => $project->highlights,
                     'datum'      => $project->datum ?? null,
                     'image_url'  => Storage::url($project->image_path),
+                    'created_at' => $project->created_at,
                 ];
             });
         } else{
@@ -34,6 +35,7 @@ class ProjectsController extends Controller
                     'highlights' => $project->highlights,
                     'datum'      => $project->datum ?? null,
                     'image_url'  => Storage::url($project->image_path),
+                    'created_at' => $project->created_at,
                 ];
             });
         }

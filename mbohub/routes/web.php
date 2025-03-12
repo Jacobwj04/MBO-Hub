@@ -24,6 +24,7 @@ Route::get('/', function () {
             'text'       => $project->text,
             'datum'      => $project->datum ?? null,
             'image_url'  => Storage::url($project->image_path),
+            'created_at' => $project->created_at,
         ];
     });
     if ($projects->isEmpty()) {

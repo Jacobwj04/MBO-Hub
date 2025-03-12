@@ -36,18 +36,32 @@ function Welcome() {
             <section className="projects">
                 <h1 className="projects-h1"> Projects</h1>
                 <ul className="project-container">
-                    { projects.map((project) => (
-                        <li key={ project.id }>
-                            <Project
-                                title={ project.title }
-                                text={ project.text }
-                                summary={ project.summary }
-                                id={ project.id }
-                                image={ project.image_url }
-                                readMore={ 'lees meer' }
-                            />
-                        </li>
-                    )) }
+                    { projects.map((project) => {
+                            const date = new Date(project.created_at);
+
+                            const formattedDate = date.toLocaleDateString('nl-NL', {
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric',
+                                timeZone: 'UTC'
+                            }).split('/').join('-');
+
+                            return (
+                                <li key={ project.id }>
+                                    <Project
+                                        title={ project.title }
+                                        summary={ project.summary }
+                                        text={ project.text }
+                                        id={ project.id }
+                                        image={ project.image_url }
+                                        readMore={ 'lees meer' }
+                                        date={ formattedDate }
+                                    />
+                                    { console.log('Project:', project) }
+                                </li>
+                            );
+                        },
+                    ) }
                 </ul>
             </section>
 
