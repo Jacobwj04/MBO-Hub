@@ -4,7 +4,8 @@ import { parse, getMonth, getYear } from 'date-fns';
 import { nl } from 'date-fns/locale';
 
 export default function Calender({ isHomePage }) {
-    const [hiddenTextVisibility, setHiddenTextVisibility] = useState({}); // Track visibility per activity
+
+    const [hiddenTextVisibility, setHiddenTextVisibility] = useState({});
 
     const [selectedMonthYear, setSelectedMonthYear] = useState({
         year: new Date().getFullYear(),
