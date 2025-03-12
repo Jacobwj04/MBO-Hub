@@ -22,7 +22,6 @@ function Form() {
                 <input type="hidden" name="naam" value={ user } />
                 <input type="text" name="title" placeholder="Titel"/>
                 <textarea name="summary" placeholder="Sammenvatting"/>
-                <input type="text" name="location" placeholder="Locatie"/>
                 <textarea name="text" placeholder="Text"/>
                 <textarea name="highlights" placeholder="Uitgelicht"/>
                 <input type="file" name="image" accept="image/*"/>

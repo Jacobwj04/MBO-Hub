@@ -17,7 +17,6 @@ class CreateProjectsTable extends Migration
             $table->text('summary');
             $table->string('image_path');
             $table->text('text');
-            $table->text('highlights')->nullable();
             $table->integer('highlighted')->default(0);
             $table->integer('public')->default(0);
             $table->timestamp('updated_at')->useCurrent();

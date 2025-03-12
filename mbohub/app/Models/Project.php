@@ -28,7 +28,6 @@ class Project extends Model
     protected $fillable = [
         'title',
         'summary',
-        'location', // Added from migration
         'text',
         'highlights', // Corrected from 'highlight' to match migration
         'image_path', // Replaced 'image' with filesystem path
