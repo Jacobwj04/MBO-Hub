@@ -9,7 +9,7 @@ import Navigation from "@/Layouts/Navigation.jsx";
 
 
 export function About() {
-    
+
     return (
 
         <GuestLayout>
@@ -26,16 +26,16 @@ export function About() {
             <section className="about-us-section">
                 <h1 className="about-us-h1">Ontmoet ons Team</h1>
                 <div className="about-us-team">
-                <Project title={"Sarah de Vries"} text={"Project leider"} circle={true} textcentered={true} />
-                <Project title={"Mark Jansen"} text={"Coördinator Bedrijfsrelaties"} circle={true} textcentered={true} />
+                <Project title={"Sarah de Vries"} text={"Project leider"} circle={true} textcentered={true} deleteButton={false}/>
+                <Project title={"Mark Jansen"} text={"Coördinator Bedrijfsrelaties"} circle={true} textcentered={true} deleteButton={false}/>
                 </div>
             </section>
             <section className="about-us-devs">
                 <h2 className="about-us-h2-devs">Developers</h2>
                 <div className="about-us-developer">
-                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Luc Zuidema"} text={"Project leider, Eindejaars Backend Developer"} circle={true} textcentered={true} />
-                    <Project title={"Milou Geervliet"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} />
+                    <Project title={"Jacob Wassall-jamieson"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} deleteButton={false}/>
+                    <Project title={"Luc Zuidema"} text={"Project leider, Eindejaars Backend Developer"} circle={true} textcentered={true} deleteButton={false}/>
+                    <Project title={"Milou Geervliet"} text={"Project leider, Eindejaars Frontend Developer"} circle={true} textcentered={true} deleteButton={false}/>
                 </div>
             </section>
             <section className="about-us-partners">

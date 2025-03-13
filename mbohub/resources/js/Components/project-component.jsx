@@ -16,6 +16,7 @@ export default function Project({
     textcentered,
     button,
     id = 1,
+    deleteButton = true,
 }) {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -67,11 +68,13 @@ export default function Project({
             <div className="project-component">
                 <figure className="image-container">
                     <AuthenticatedLayout>
-                        <button className="editButton" onClick={handleDelete}>
-                            X
-                        </button>
+                        {deleteButton && (
+                            <button className="editButton" onClick={ handleDelete }>
+                                X
+                            </button>
+                        ) }
                     </AuthenticatedLayout>
-                    {topLabelText && <label className="project-top-label">{topLabelText}</label>}
+                    { topLabelText && <label className="project-top-label">{topLabelText}</label>}
                     {circle ? (
                         <img className="circle-image" src="https://placehold.co/600x400" alt="image from projects" />
                     ) : (
